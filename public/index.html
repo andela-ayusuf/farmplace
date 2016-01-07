@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fpApp">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <base href="/">
+
+  <title>Farm Place</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/sweetalert/dist/sweetalert.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+	<div ui-view></div>
+
+	<!-- SCRIPTS -->
+  <!-- LIBRARIES -->
+  <script src="libs/angular/angular.js"></script>
+  <script src="libs/jquery/dist/jquery.min.js"></script>
+  <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="libs/sweetalert/dist/sweetalert.min.js"></script>
+  
+  <!-- UI ROUTER -->
+  <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <!-- MAIN -->
+  <script src="app/app.js"></script>
+
+  <!-- SERVICES -->
+  <script src="app/services/baseurl.service.js"></script>
+  <script src="app/services/landing.service.js"></script>
+
+  <!-- CONTROLLERS -->
+  <script src="app/controllers/landing.controller.js"></script>
+
+</body>
+
+</html>
