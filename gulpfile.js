@@ -8,9 +8,9 @@ var del = require('del');
 var rename = require('gulp-rename');
 var nodemon = require('gulp-nodemon');
 
-var jsFiles = ['public/app/**/*.js', 'public/app/app.js'];
+var jsFiles = ['public/app/controllers/*.js', 'public/app/services/*.js', 'public/app/app.js'];
 var cssFiles = 'public/assets/css/*.css';
-var imgFiles = 'public/assets/images/*';
+// var imgFiles = 'public/assets/images/*';
 
 // minify js files
 gulp.task('scripts', function() {
@@ -31,19 +31,19 @@ gulp.task('stylesheets', function () {
 });
 
 // minify images
-gulp.task('images', function () {
-  return gulp.src(imgFiles)
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest('build/images'));
-});
+// gulp.task('images', function () {
+//   return gulp.src(imgFiles)
+//     .pipe(imagemin({
+//       progressive: true,
+//       svgoPlugins: [{removeViewBox: false}],
+//       use: [pngquant()]
+//     }))
+//     .pipe(gulp.dest('build/images'));
+// });
 
 // clean up
 gulp.task('clean', function() {
-  return del(['build/js', 'build/css', 'build/images']);
+  return del(['build/js', 'build/css']);
 });
 
 // start app
@@ -55,7 +55,7 @@ gulp.task('nodemon', function () {
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('scripts', 'stylesheets', 'nodemon', 'images');
+    gulp.start('scripts', 'stylesheets', 'nodemon');
 });
 
 
