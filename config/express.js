@@ -52,6 +52,6 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.use(cookieParser());
 
-app.use('/', router);
+app.use('/api', router);
 
 module.exports = app;
