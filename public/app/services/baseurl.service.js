@@ -1,2 +1,2 @@
-angular.module('fpApp')
-  .value('baseUrl', 'localhost:5000');
+angular.module('farmplace')
+  .value('baseUrl', 'http://localhost:5000');

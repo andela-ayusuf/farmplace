@@ -1,4 +1,4 @@
-var app = angular.module('fpApp', ['ui.router']);
+var app = angular.module('farmplace', ['ui.router']);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -6,7 +6,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
     .state('landing', {
       url: '/',
       templateUrl: 'app/views/landing.view.html',
-      controller: 'SubCtrl'
+      controller: ''
+    })
+    .state('signup', {
+    	url: '/signup',
+    	templateUrl: 'app/views/signup.view.html',
+    	controller: 'UserCtrl'
     });
 
     $urlRouterProvider.otherwise('/');
