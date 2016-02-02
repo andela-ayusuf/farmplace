@@ -6,5 +6,12 @@ angular.module('farmplace')
         return res;
       });
 		};
+
+		User.login = function(user) {
+      return $http.post(baseUrl + '/api/login', user).then(function(res) {
+        return res;
+      });
+    };
+
 		return User;
 	}]);

@@ -22,16 +22,16 @@
                   <ul class="dropdown-menu" aria-labelledby="drop3">
                     <form class="navbar-form">
                       <div class="form-group">
-                        <input class="form-control" placeholder="Email" type="text">
+                        <input ng-model="user.username" class="form-control" placeholder="Username" type="text">
                       </div>
                       <div class="form-group">
-                        <input class="form-control" placeholder="Password" type="password">
+                        <input ng-model="user.password" class="form-control" placeholder="Password" type="password">
                       </div>
                       <div class="form-group">
                         <a href="#">Forgot password?</a>
                       </div>
-                      <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                      <a href="/signup" class="btn btn-primary btn-block">Register For Farm Place</a>
+                      <button type="submit" ng-click="login()" class="btn btn-primary btn-block">Sign In</button>
+                      <a href="/signup" class="btn btn-default btn-block">Register For Farm Place</a>
                     </form>
                   </ul>
                 </li>

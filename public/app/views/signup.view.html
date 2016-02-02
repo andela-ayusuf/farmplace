@@ -14,10 +14,25 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">About<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
-            <a href="/signup" class="btn btn-default navbar-btn" role="button">Sign Up</a>
-            <a href="#" class="btn btn-default navbar-btn" role="button">Sign In</a>
+            <li><a id="drop3" class="dropdown-toggle" data-toggle="dropdown" role="button">Sign In/Register <span class="caret"></span> </a>
+              <ul class="dropdown-menu" aria-labelledby="drop3">
+                <form class="navbar-form">
+                  <div class="form-group">
+                    <input ng-model="user.username" class="form-control" placeholder="Username" type="text">
+                  </div>
+                  <div class="form-group">
+                    <input ng-model="user.password" class="form-control" placeholder="Password" type="password">
+                  </div>
+                  <div class="form-group">
+                    <a href="#">Forgot password?</a>
+                  </div>
+                  <button type="submit" ng-click="login()" class="btn btn-primary btn-block">Sign In</button>
+                  <a href="/signup" class="btn btn-default btn-block">Register For Farm Place</a>
+                </form>
+              </ul>
+            </li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -26,6 +41,7 @@
     </nav>
   </div>
 </div>
+
 
 <div class="container">
   <div class="row">
@@ -36,24 +52,24 @@
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" ng-model="user.firstname" placeholder="First Name" tabindex="1">
+                <input type="text" class="form-control" ng-model="newUser.firstname" placeholder="First Name" tabindex="1">
               </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
               <div class="form-group">
-                <input type="text" class="form-control" ng-model="user.lastname" placeholder="Last Name" tabindex="2">
+                <input type="text" class="form-control" ng-model="newUser.lastname" placeholder="Last Name" tabindex="2">
               </div>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" ng-model="user.username" placeholder="Username" tabindex="3">
+            <input type="text" class="form-control" ng-model="newUser.username" placeholder="Username" tabindex="3">
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" ng-model="user.email" placeholder="Email Address" tabindex="4">
+            <input type="email" class="form-control" ng-model="newUser.email" placeholder="Email Address" tabindex="4">
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
-              <input list="states" class="form-control" ng-model="user.address" placeholder="Current Location (State)" tabindex="5">
+              <input list="states" class="form-control" ng-model="newUser.address" placeholder="Current Location (State)" tabindex="5">
               <datalist id="states">
                 <option>Outside Nigeria</option>
                 <option>Abia</option>
@@ -97,14 +113,14 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
               <div class="form-group">
-                <input type="tel" class="form-control" ng-model="user.phoneno" placeholder="Phone Number" tabindex="6">
+                <input type="tel" class="form-control" ng-model="newUser.phoneno" placeholder="Phone Number" tabindex="6">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
               <div class="form-group">
-                <input type="password" class="form-control" ng-model="user.password" placeholder="Password" tabindex="7">
+                <input type="password" class="form-control" ng-model="newUser.password" placeholder="Password" tabindex="7">
               </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">

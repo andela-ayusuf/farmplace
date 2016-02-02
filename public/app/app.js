@@ -6,12 +6,17 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
     .state('landing', {
       url: '/',
       templateUrl: 'app/views/landing.view.html',
-      controller: ''
+      controller: 'UserCtrl'
     })
     .state('signup', {
     	url: '/signup',
     	templateUrl: 'app/views/signup.view.html',
     	controller: 'UserCtrl'
+    })
+    .state('dashboard', {
+      url: '/dashboard',
+      templateUrl: 'app/views/dashboard.view.html',
+      controller: 'UserCtrl'
     });
 
     $urlRouterProvider.otherwise('/');
