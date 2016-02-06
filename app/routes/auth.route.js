@@ -1,19 +1,22 @@
 var authCtrl = require('../controllers/auth.controller');
 
 function authRoutes(router) {
-  router.route('/signup')
-    .post(authCtrl.signup);
+	// user auth routes
+  router.route('/user/signup')
+    .post(authCtrl.userSignup);
 
-  router.route('/login')
-    .post(authCtrl.login);
+  router.route('/user/login')
+    .post(authCtrl.userLogin);
+
+  // farm owner auth routes
+  router.route('/farmOwner/signup')
+    .post(authCtrl.farmOwnerSignup);
+
+  router.route('/farmOwner/login')
+    .post(authCtrl.farmOwnerLogin);
 
   router.route('/logout')
     .post(authCtrl.logout);
-
-  router.route('/user/:id')
-    .get(authCtrl.middleware, authCtrl.getUser)
-    .put(authCtrl.middleware, authCtrl.editUser)
-    .delete(authCtrl.middleware, authCtrl.deleteUser);
 }
 
 module.exports = authRoutes;

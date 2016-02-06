@@ -1,4 +1,4 @@
-var userRoutes = require('./sub.route');
+var userRoutes = require('./user.route');
 var authRoutes = require('./auth.route');
 
 function routes(router) {
