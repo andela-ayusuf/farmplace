@@ -9,15 +9,13 @@ var userSchema = new Schema({
 		unique: true,
 		trim: true
 	},
-	name: {
-		firstname: {
-	    type: String,
-	    required: true
-  	},
-	  lastname: {
-	    type: String,
-	    required: true
-	  }
+	firstname: {
+		type: String,
+		required: true
+	},
+	lastname: {
+		type: String,
+		required:true
 	},
 	email: {
 		type: String,
@@ -63,3 +61,4 @@ userSchema.methods.comparePassword = function(password) {
 };
 
 module.exports = mongoose.model('User', userSchema);
+
