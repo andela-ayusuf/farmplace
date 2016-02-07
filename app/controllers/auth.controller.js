@@ -49,39 +49,38 @@ exports.userSignup = function(req, res) {
 // this method logs a user in
 exports.userLogin = function(req, res) {
   User.findOne({
-    username: req.body.username})
-      .select('username password')
-      .exec(function(err, user) {
-    if (err) {
-      throw err;
-    }
-    if (!user) {
-      return res.status(401).send({
-        success: false,
-        message: 'Invalid Username or Password!'
-      });
-    }
-    else {
-      var validPassword = user.comparePassword(req.body.password);
-      if (!validPassword) {
+      username: req.body.username
+    })
+    .select('username password')
+    .exec(function(err, user) {
+      if (err) {
+        throw err;
+      }
+      if (!user) {
         return res.status(401).send({
           success: false,
           message: 'Invalid Username or Password!'
         });
+      } else {
+        var validPassword = user.comparePassword(req.body.password);
+        if (!validPassword) {
+          return res.status(401).send({
+            success: false,
+            message: 'Invalid Username or Password!'
+          });
+        } else {
+          var token = jwt.sign(user, config.secret, {
+            expiresIn: 1440
+          });
+          res.status(200).send({
+            success: true,
+            token: token,
+            message: 'Welcome ' + user,
+            id: user._id
+          });
+        }
       }
-      else {
-        var token = jwt.sign(user, config.secret, {
-          expiresIn: 1440
-        });
-        res.status(200).send({
-          success: true,
-          token: token,
-          message: 'Welcome ' + user,
-          id: user._id
-        });
-      }
-    }
-  });
+    });
 };
 
 // this method creates a new farm owner
@@ -105,11 +104,10 @@ exports.farmOwnerSignup = function(req, res) {
         });
       }
       else if (err.code === 11000) {
-        // return res.status(401).send({
-        //   success: false,
-        //   message: 'Farm Name Already Exists!'
-        // });
-        return res.send(err);
+        return res.status(401).send({
+          success: false,
+          message: 'Farm Name Already Exists!'
+        });
       }
       else {
         return res.status(401).send(err);

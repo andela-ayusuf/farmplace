@@ -35,7 +35,7 @@ exports.getUser = function(req, res) {
       res.send(err);
     }
     else {
-      res.json(user);
+      res.status(200).send(user);
     }
   });
 };
@@ -43,21 +43,26 @@ exports.getUser = function(req, res) {
 // this method allows user information to be edited
 exports.editUser = function(req, res) {
   User.findByIdAndUpdate(req.params.id, req.body, function(err, user) {
-    res.send({
-      success: true,
-      message: 'Account Updated!'
-    });
+    if (err) {
+      return res.send(err);
+    }
+    else {
+      res.status(200).send({
+        success: true,
+        message: 'Account Updated!'
+      });
+    }
   });
 };
 
-// this method deletes single document
+// this method deletes a user account
 exports.deleteUser = function(req, res) {
   User.findById(req.params.id).remove(function(err, user) {
     if (err) {
       return res.send(err);
     }
     else {
-      res.send({
+      res.status(200).send({
         success: true,
         message: 'Account Deleted'
       });
