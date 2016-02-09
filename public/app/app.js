@@ -1,6 +1,6 @@
 var app = angular.module('farmplace', ['ui.router']);
 
-app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
 
   $stateProvider
     .state('landing', {
@@ -16,9 +16,33 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
     .state('dashboard', {
       url: '/dashboard',
       templateUrl: 'app/views/dashboard.view.html',
-      controller: 'UserCtrl'
+      controller: 'JobCtrl'
+    })
+    .state('foSignup', {
+      url: '/foSignup',
+      templateUrl: 'app/views/foSignup.view.html',
+      controller: ''
     });
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
+
+    $httpProvider.interceptors.push(['$q', '$location', '$window', function($q, $location, $window) {
+      return {
+        'request': function(config) {
+          config.headers = config.headers || {};
+          if ($window.sessionStorage.token) {
+            config.headers['x-access-token'] = $window.sessionStorage.token;
+          }
+          return config;
+        },
+        'responseError': function(response) {
+          if (response.status === 403) {
+            $location.url('/home');
+          }
+          return $q.reject(response);
+        }
+      };
+    }]);
+
 }]);
