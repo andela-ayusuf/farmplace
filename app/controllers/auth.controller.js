@@ -75,7 +75,7 @@ exports.userLogin = function(req, res) {
           res.status(200).send({
             success: true,
             token: token,
-            message: 'Welcome ' + user,
+            message: 'Welcome ' + user.username,
             id: user._id
           });
         }
