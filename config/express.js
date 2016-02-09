@@ -11,8 +11,6 @@ var methodOverride = require('method-override');
 var config = require('./config');
 var routes = require('../app/routes/');
 var db = require('./db');
-var path = require('path');
-
 
 routes(router);
 
@@ -43,15 +41,14 @@ app.use(function(req, res, next) {
   next();
 });
 
-
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname +'../public/index.html')); 
-});
-
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.use(cookieParser());
 
 app.use('/api', router);
+
+app.get('*', function(req, res) {
+  res.sendFile(process.cwd() + '/public/index.html');
+});
 
 module.exports = app;
