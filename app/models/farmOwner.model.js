@@ -34,12 +34,25 @@ var farmOwnerSchema = new Schema({
 		required: true,
 		unique: true
 	},
-	website: {
-		type: String
+	typeOfAgric: {
+		type: String,
+		required: true,
+		enum: ['arable', 'livestock', 'mixed']
+	},
+	numOfEmployees: {
+		type: Number,
+		required: true
 	},
 	address: {
 		type: String,
 		required: true
+	},
+	state: {
+		type: String,
+		required: true
+	},
+	website: {
+		type: String
 	}
 });
 

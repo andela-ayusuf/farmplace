@@ -92,8 +92,11 @@ exports.farmOwnerSignup = function(req, res) {
   farmOwner.phoneno = req.body.phoneno;
   farmOwner.password = req.body.password;
   farmOwner.farmName = req.body.farmName;
-  farmOwner.website = req.body.website;
+  farmOwner.typeOfAgric = req.body.typeOfAgric;
+  farmOwner.numOfEmployees = req.body.numOfEmployees;
   farmOwner.address = req.body.address;
+  farmOwner.state = req.body.state;
+  farmOwner.website = req.body.website;
 
   farmOwner.save(function(err) {
     if (err) {
