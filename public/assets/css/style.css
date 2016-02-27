@@ -1,6 +1,6 @@
 /*navbar*/
 .navbar-default .navbar-nav > li > a{
-  color: #202020;
+  color: #506A85;
   font-size: 16px;
   font-weight: 400;
   text-transform: capitalize;
@@ -22,9 +22,6 @@ background-color: #33cc33;
 }
 .navbar-default .navbar-nav > li > a:hover:after {
   width: 100%;
-}
-.navbar-brand {
-  padding-right: 300px;
 }
 .main-nav > li {
   padding-left: 20px;
@@ -63,12 +60,7 @@ background-color: #33cc33;
   box-shadow: none;
 }
 
-
-
-
-
-
-
+/*slider*/
 .slider-area{
   position: relative;
   height: 630px
@@ -92,10 +84,9 @@ background-color: #33cc33;
   text-transform: uppercase;
 }
 .slider-content p {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 60px;
 }
-
 .slider .owl-theme .owl-controls {
   margin-top: 0px;
   position: relative;
@@ -124,51 +115,48 @@ background-color: #33cc33;
   margin-right: 10px;
   width: 195px;
 }
-.form-inline input[type=submit]{
+.form-inline button{
   background: #33cc33;
   color: #fff;
   height: 40px;
   width: 90px;
-  border-radius: 1px;
+  border-radius: 3px;
   font-weight: bold;
   font-size: 16px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.form-inline input[type=submit]:hover{
-  background: #00A2DE
+.form-inline button:hover{
+  background: #c2c2c2;
+  color: #fff;
 }
 
+/*about*/
 .page-title {
   padding-top: 70px;
 }
-.page-title h5{
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 0
-}
 .page-title h2 {
+  color: #506A85;
   font-size: 25px;
   font-weight: 800;
   margin-top: 5px;
   text-transform: uppercase;
 }
-.page-title h2 span{
+.page-title h2 span {
   color: #00ADEF
 }
 .page-title p {
   color: #666666;
+  font-size: 20px;
   line-height: 30px;
   padding: 0 25%;
   margin-top: 16px;
 }
-
 .how-it-work{
   margin: 40px 0 80px
 }
-
 .single-work{
   padding: 50px 0 70px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -179,7 +167,7 @@ background-color: #33cc33;
   border-bottom: 2px solid #33cc33
 }
 .single-work h3{
-  color: #202020;
+  color: #506A85;
   font-size: 20px;
   font-weight: 500;
   -webkit-transition: all 0.2s ease-in-out;
@@ -200,7 +188,7 @@ background-color: #33cc33;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.single-work.active{  
+.single-work.active {  
   background: #33cc33
 }
 .single-work.active h3{
@@ -219,22 +207,49 @@ background-color: #33cc33;
   color: #eeeeee
 }
 
+/*sponsor*/
+.wantto-section{
+  padding-bottom:4em;
+  text-align:center;
+}
+.wantto-section h4 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #506a85;
+}
+.wantto-section p {
+  color: #666666;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 0 25%;
+  margin-top: 16px;
+}
+.wantto-section button {
+  background: #33cc33;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.wantto-section button:hover{
+  background: #c2c2c2;
+  color: #fff;
+}
 
-
+/*footer*/
 .footer-area{
-  background: #000;
+  background: #506a85;
   border-top: 4px solid #33cc33;
-  padding-bottom: 20px
-
 }
 .footer{
-  padding: 0px 0 80px 0;
+  padding: 0px 0 10px 0;
 }
 .single-footer{
-  margin-top: 60px
-}
-.single-footer img{
-  margin-bottom: 20px;
+  margin-top: 30px
 }
 .single-footer p{
   color: #fff;
@@ -244,7 +259,7 @@ background-color: #33cc33;
   color: #fff;
   font-weight: 700;
   margin-top: 0px;
-  margin-bottom: 45px
+  margin-bottom: 20px
 }
 .single-footer h5{
   color: #fff;
@@ -258,7 +273,7 @@ background-color: #33cc33;
   margin-bottom: 10px
 }
 .single-footer ul li a{
-  color: #6d7a83;
+  color: #fff;
   font-weight: 700;
 }
 .single-footer ul li a:hover{
@@ -266,18 +281,134 @@ background-color: #33cc33;
   text-decoration: none;
 }
 
-.footer-copy{
-  color: #fff;
-  font-weight: 700;
+@media (max-width: 480px){
+
+.navbar-collapse {
+  margin-top: 15px;
+}
+.navbar-default .navbar-nav > li > a {
+  font-size: 13px;
+}
+.nav-button {
+  font-size: 13px;
+  padding: 6px 13px;
+}
+.navbar-nav > li > a {
+  padding-left: 15px;
+  padding-right: 6px;
+}
+.navbar-default .navbar-nav > li > a.active::after {
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+}
+.navbar-default .navbar-nav > li > a::after {
+  bottom: -2px;
+  height: 2px;
+}
+.nav > li > a {
+  padding: 8px 10px;
 }
 
-.footer-copy span{
-  margin-right: 20px;
-  margin-left: 20px;
+.slider-area .container{
+  padding: 0 50px
 }
-.footer-copy span a{
-  color: #33cc33;
-  font-weight: 800;
+.slider-content {
+  margin-left: -53%;
+}
+.slider-content h2 {
+  font-size: 23px;
+  padding-top: 18px;
+}
+.slider-content p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.search-form {
+  padding: 10px 10px;
+}
+.form-inline .form-control, .form-inline .form-control {
+  height: 30px;
+  width: 100%;
+}
+.form-inline button {
+  height: 33px;
+  width: 100%
+}
+.slider-content {
+  top: 5%;
+}
+.slider-area{
+  height:440px;
+}
+#bg-slider .item img {
+  height: 440px;
+}
+.slider .owl-pagination {
+  bottom: 165px;
+  right: 0;
+  width: 30px;
 }
 
+.page-title{
+  padding-top: 50px;
+}
+.page-title h2 {
+  font-size: 20px;
+  margin-top: 2px;
+}
+.page-title p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 10px;
+  padding: 0 5%
+}
+.single-work {
+  padding: 20px 0 40px;
+}
+.single-work img {
+  width: 60px;
+}
+.single-work h3 {
+  font-size: 18px;
+}
+.single-work p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 15px;
+}
 
+.wantto-section{
+  margin-top: -30px;
+}
+.wantto-section h4 {
+  font-size: 17px;
+}
+.wantto-section p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 10px;
+  padding: 0 5%
+}
+.wantto-section button {
+  height: 40px;
+  width: 25%;
+}
+
+.single-footer {
+  margin-top: 35px;
+}
+.single-footer p {
+  font-size: 13px;
+}
+.single-footer h4 {
+  margin-bottom: 25px;
+}
+.single-footer ul li {
+  margin-bottom: 5px;
+}
+.single-footer ul li a {
+  font-size: 13px;
+}
+
+}
