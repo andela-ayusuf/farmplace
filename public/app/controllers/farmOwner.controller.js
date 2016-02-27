@@ -10,7 +10,7 @@ angular.module('farmplace')
     $scope.farmOwnerSignup = function() {
       FarmOwnerService.farmOwnerSignup($scope.newFo).then(function(res) {
         $scope.saveSessStorage(res.data.id, res.data.token);
-        // $location.url('/dashboard');
+        $location.url('/foDashboard');
         console.log(res);
       }, function(err) {
         console.log(err);
@@ -20,7 +20,7 @@ angular.module('farmplace')
     $scope.farmOwnerLogin = function() {
       FarmOwnerService.farmOwnerLogin($scope.fo).then(function(res) {
         $scope.saveSessStorage(res.data.id, res.data.token);
-        // $location.url('/dashboard');
+        $location.url('/foDashboard');
         console.log(res);
       }, function(err) {
         console.log(err);

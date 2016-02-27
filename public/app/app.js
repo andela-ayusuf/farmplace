@@ -22,6 +22,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       url: '/foSignup',
       templateUrl: 'app/views/foSignup.view.html',
       controller: 'FarmOwnerCtrl'
+    })
+    .state('foDashboard', {
+      url: '/foDashboard',
+      templateUrl: 'app/views/foDashboard.view.html',
+      controller: 'FarmOwnerCtrl'
     });
 
     $urlRouterProvider.otherwise('/');
