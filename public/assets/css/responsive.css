@@ -1,0 +1,386 @@
+@media (max-width: 480px){
+
+.navbar-collapse {
+  margin-top: 15px;
+}
+.navbar-default .navbar-nav > li > a {
+  font-size: 13px;
+}
+.nav-button {
+  font-size: 13px;
+  padding: 6px 13px;
+}
+.navbar-nav > li > a {
+  padding-left: 15px;
+  padding-right: 6px;
+}
+.navbar-default .navbar-nav > li > a::after {
+  bottom: -2px;
+  height: 2px;
+}
+.nav > li > a {
+  padding: 8px 10px;
+}
+
+.slider-area .container{
+  padding: 0 50px
+}
+.slider-content {
+  margin-left: -53%;
+}
+.slider-content h2 {
+  font-size: 23px;
+  padding-top: 18px;
+}
+.slider-content p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.search-form {
+  padding: 10px 10px;
+}
+.form-inline .form-control, .form-inline .form-control {
+  height: 30px;
+  width: 100%;
+}
+.form-inline button {
+  height: 33px;
+  width: 100%
+}
+.slider-content {
+  top: 5%;
+}
+.slider-area{
+  height:440px;
+}
+#bg-slider .item img {
+  height: 440px;
+}
+.slider .owl-pagination {
+  bottom: 165px;
+  right: 0;
+  width: 30px;
+}
+
+.page-title{
+  padding-top: 50px;
+}
+.page-title h2 {
+  font-size: 20px;
+  margin-top: 2px;
+}
+.page-title p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 10px;
+  padding: 0 5%
+}
+.single-work {
+  padding: 20px 0 40px;
+}
+.single-work img {
+  width: 60px;
+}
+.single-work h3 {
+  font-size: 18px;
+}
+.single-work p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 15px;
+}
+
+.wantto-section{
+  margin-top: -30px;
+}
+.wantto-section h4 {
+  font-size: 17px;
+}
+.wantto-section p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 10px;
+  padding: 0 5%
+}
+.wantto-section button {
+  height: 40px;
+  width: 25%;
+}
+
+.single-footer {
+  margin-top: 35px;
+}
+.single-footer p {
+  font-size: 13px;
+}
+.single-footer h4 {
+  margin-bottom: 25px;
+}
+.single-footer ul li {
+  margin-bottom: 5px;
+}
+.single-footer ul li a {
+  font-size: 13px;
+}
+
+}
+
+@media (min-width: 480px) and (max-width: 767px){
+
+.navbar-collapse {
+  margin-top: 15px;
+}
+.navbar-default .navbar-nav > li > a {
+  font-size: 13px;
+}
+.nav-button {
+  font-size: 13px;
+  padding: 6px 13px;
+}
+.navbar-nav > li > a {
+  padding-left: 15px;
+  padding-right: 6px;
+}
+.main-nav {
+  padding-top: 4px;
+}
+.navbar-default .navbar-nav > li > a::after {
+  bottom: -2px;
+  height: 2px;
+}
+
+.slider-area .container{
+  padding: 0 50px
+}
+.slider-content {
+  margin-left: -53%;
+}
+.slider-content h2 {
+  font-size: 24px;
+  padding-top: 20px;
+}
+.slider-content p {
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+.search-form {
+  padding: 10px 10px;
+  margin-top: -40px;
+}
+.form-inline .form-control, .form-inline .form-control {
+  height: 35px;
+  width: 100%;
+}
+.form-inline button {
+  height: 35px;
+  width: 100%
+}
+.slider-content {
+  top: 5%;
+}
+.slider-area{
+  height:440px;
+}
+#bg-slider .item img {
+  height: 440px;
+}
+.slider .owl-pagination {
+  bottom: 165px;
+  right: 0;
+  width: 30px;
+}
+.page-title{
+  padding-top: 50px;
+}
+.page-title h2 {
+  font-size: 20px;
+  margin-top: 2px;
+}
+.page-title p {
+  line-height: 20px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.single-work {
+  padding: 20px 0 40px;
+}
+.single-work img {
+  width: 60px;
+}
+.single-work h3 {
+  font-size: 18px;
+}
+.single-work p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 15px;
+}
+.nav > li > a {
+  padding: 8px 10px;
+}
+.nav-tabs > li > a {
+  font-size: 12px;
+}
+
+.wantto-section{
+  margin-top: -40px;
+}
+.wantto-section h4 {
+  font-size: 20px;
+}
+.wantto-section p {
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 10px;
+  padding: 0 5%
+}
+.wantto-section button {
+  height: 35px;
+  width: 25%;
+}
+
+.single-footer p {
+  font-size: 13px;
+}
+.single-footer h4 {
+  margin-bottom: 25px;
+}
+.footer-copy span {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.single-footer ul li {
+  margin-bottom: 5px;
+}
+.single-footer ul li a {
+  font-size: 13px;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 979px){
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 15px;
+}
+.nav-button {
+  font-size: 13px;
+  padding: 6px 13px;
+  margin-top: 12px;
+}
+.navbar-nav > li > a {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.main-nav {
+  padding-top: 4px;
+}
+.navbar-default .navbar-nav > li > a::after{
+  bottom: -1px;
+  height: 4px;
+}
+
+.slider-area .container{
+  padding: 0 50px
+}
+.slider-content {
+  margin-left: -375px;
+}
+.slider-content h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+.slider-content p {
+  font-size: 17px;
+  margin-bottom: 50px;
+}
+.search-form {
+  padding: 15px 0;
+}
+.form-inline .form-control, .form-inline .form-control {
+  height: 35px;
+  width: 160px;
+}
+.form-inline button {
+  height: 35px;
+  width: 80px;
+}
+.slider-area{
+  height:440px;
+}
+#bg-slider .item img {
+  height: 440px;
+}
+.slider .owl-pagination {
+  bottom: 165px;
+  right: 0;
+  width: 30px;
+}
+
+.page-title{
+  padding-top: 50px;
+}
+.page-title h2 {
+  font-size: 20px;
+  margin-top: 2px;
+}
+.page-title p {
+  line-height: 20px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.wantto-section{
+  margin-top: -40px;
+}
+.wantto-section h4 {
+  font-size: 22px;
+}
+.wantto-section p {
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 10px;
+  padding: 0 5%
+}
+.wantto-section button {
+  width: 25%;
+}
+
+.single-footer p {
+  font-size: 13px;
+}
+.single-footer h4 {
+  margin-bottom: 25px;
+}
+.footer-copy span {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.single-footer ul li {
+  margin-bottom: 5px;
+}
+.single-footer ul li a {
+  font-size: 13px;
+}
+
+}
+
+@media (min-width: 969px) and (max-width: 1169px){
+
+.navbar-nav > li > a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.slider-content {
+  margin-left: -485px;
+}
+.slider-area{
+  height: 540px;
+}
+#bg-slider .item img {
+  height: 540px;
+}
+
+}
