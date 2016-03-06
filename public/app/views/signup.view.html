@@ -1,50 +1,30 @@
-<div class="top-header">
-  <!-- <div class="container"> -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Farm Place</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><p class="navbar-btn"><a href="/foSignup" class="btn btn-primary">Farm Owners</a></p></li>
-            <li><a id="drop3" class="dropdown-toggle" data-toggle="dropdown" role="button">Sign In/Sign Up <span class="caret"></span> </a>
-              <ul class="dropdown-menu" aria-labelledby="drop3">
-                <form class="navbar-form">
-                  <div class="form-group">
-                    <input ng-model="user.username" class="form-control" placeholder="Username" type="text">
-                  </div>
-                  <div class="form-group">
-                    <input ng-model="user.password" class="form-control" placeholder="Password" type="password">
-                  </div>
-                  <div class="form-group">
-                    <a href="#">Forgot password?</a>
-                  </div>
-                  <button type="submit" ng-click="login()" class="btn btn-primary btn-block">Sign In</button>
-                  <hr>
-                  <p>New To Farmplace?</p>
-                  <a href="/signup" class="btn btn-default btn-block">Sign Up For Farm Place</a>
-                </form>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  <!-- </div> -->
-</div>
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Farm Place</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li class="links"><a href="#">Home</a></li>
+        <li class="links"><a href="#about">About</a></li>
+        <li class="links lastlink"><a href="#">Contact</a></li>
+        <li class="but"><p class="navbar-btn"><a href="/" class="btn nav-button">Sign in</a></p></li>
+        <li class="but"><p class="navbar-btn"><a href="/signup" class="btn nav-button signup">Sign up</a></p></li>     
+      </ul>
+    </div> <!-- /.navbar-collapse -->
+  </div> <!-- /.container-fluid -->
+</nav>
 
+<div class="formdiv">
 <div class="container">
   <div class="row">
     <br>
@@ -133,15 +113,17 @@
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-              By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.
+              By clicking <strong class="label label-default">Register</strong>, you agree to the <a class="terms" href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.
             </div>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-xs-12 col-md-12"><a href="#" ng-click="signup()" class="btn btn-primary btn-block">Sign Up</a></div>
+          <div class="row reg-but">
+            <div class="col-xs-12 col-md-12">
+              <a href="#" ng-click="signup()" id="register-but" class="btn btn-default btn-block">Sign Up</a>
+            </div>
           </div>
         </form>
       </div>
     </div>
   </div>
+</div>
 </div>
