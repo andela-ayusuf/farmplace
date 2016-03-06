@@ -13,17 +13,33 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <div class="button navbar-right">
-      <button class="navbar-btn nav-button login">Login</button>
-      <button class="navbar-btn nav-button">Sign up</button>
-    </div>
       <ul class="main-nav nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="links"><a href="#">Home</a></li>
+        <li class="links"><a href="#about">About</a></li>
+        <li class="links lastlink"><a href="#">Contact</a></li>
+        <!-- drop down -->
+        <li id="navbtn" data-toggle="dropdown"><p class="navbar-btn"><a href="/" class="btn nav-button signup">Sign in</a></p></li>
+          <ul class="dropdown-menu">
+            <form class="">
+              <div class="form-group">
+                <input ng-model="user.username" class="form-control" placeholder="Username" type="text">
+              </div>
+              <div class="form-group">
+                <input ng-model="user.password" class="form-control" placeholder="Password" type="password">
+              </div>
+              <div class="form-group">
+                <a href="#">Forgot password?</a>
+              </div>
+              <button type="submit" ng-click="login()" class="btn btn-primary">Sign In</button>
+              <hr>
+              <p>New To Farmplace?</p>
+              <a href="/signup" class="btn btn-default">Sign Up For Farm Place</a>
+            </form>
+          </ul>
+        <li id="navbtn"><p class="navbar-btn"><a href="/signup" class="btn nav-button signup">Sign up</a></p></li>
       </ul>
-    </div> <!-- /.navbar-collapse -->
-  </div> <!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 
 <!-- slider area -->
