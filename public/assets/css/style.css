@@ -1,12 +1,20 @@
 /*navbar*/
-.navbar-default .navbar-nav > li > a{
+.navbar{
+  margin-bottom: 0px;
+}
+.navbar-default {
+  background-image: none;
+  background-color: #fff;
+  background-repeat: repeat-x;
+  border-radius: 4px;
+  box-shadow: none;
+}
+.navbar-default .navbar-nav > li > a {
   color: #506A85;
   font-size: 16px;
   font-weight: 400;
   text-transform: capitalize;
   position: relative;
-}
-.navbar-nav > li > a {
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -23,7 +31,7 @@
 .navbar-default .navbar-nav > li > a:hover:after {
   width: 100%;
 }
-.main-nav > li .links {
+.navbar-default .navbar-nav > li .links {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -32,9 +40,7 @@
 }
 .nav-button {
   margin-top: 2px;
-  background-color: #c2c2c2;
   border: medium none;
-  color: #fff;
   padding: 5px 15px;
   border-radius: 4px;
   -webkit-transition: all 0.4s ease;
@@ -42,36 +48,39 @@
   -ms-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-#navbtn {
+.nav-button.signup{
+  background-color: #33cc33;
+  color: #fff;
+  margin-right: 5px;
+}
+.nav-button.signin{
+  background-color: #fff;
+  color: #506A85;
+}
+.nav-button:hover{
+  background: #c2c2c2;
+  color: #fff;
+}
+#navbarbtn {
   padding: 0 2px;
 }
 .navbar-right .dropdown-menu {
   right: 55px;
   left: auto;
-  width: 200px;
+  width: 250px;
 }
 .navbar-right .dropdown-menu .form-control {
   width: 90%;
   margin: auto;
   margin-top: 7px;
 }
-.nav-button.signup{
+.navbar-right .dropdown-menu .signin {
+  margin-top: -5px;
   background-color: #33cc33;
-  margin-right: 5px;
-}
-.nav-button:hover{
-  background: #33cc33;
+  border: medium none;
   color: #fff;
-}
-.navbar{
-  margin-bottom: 0px;
-}
-.navbar-default {
-  background-image: none;
-  background-color: #fff;
-  background-repeat: repeat-x;
+  padding: 5px 15px;
   border-radius: 4px;
-  box-shadow: none;
 }
 
 /*slider*/
@@ -299,7 +308,7 @@
   text-decoration: none;
 }
 
-/*signup page*/
+/*signup and signin page*/
 .formdiv {
   margin-top: 80px;
 }
@@ -312,14 +321,14 @@
 .terms {
   color: #506A85;
 }
-.reg-but {
+.signupin-div {
   margin-top: 17px;
 }
 .terms:hover {
   text-decoration: none;
   color: #506A85;
 }
-#register-but {
+#signupin-but {
   background-color: #33cc33;
   border: medium none;
   color: #fff;

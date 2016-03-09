@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Farm Place</a>
+      <a class="navbar-brand" href="/">Farm Place</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,7 +18,7 @@
         <li class="links"><a href="#about">About</a></li>
         <li class="links lastlink"><a href="#">Contact</a></li>
         <!-- drop down -->
-        <li id="navbtn" data-toggle="dropdown"><p class="navbar-btn"><a href="/" class="btn nav-button signup">Sign in</a></p></li>
+        <li id="navbarbtn" data-toggle="dropdown"><p class="navbar-btn"><a href="/" class="btn nav-button signin">Sign in</a></p></li>
           <ul class="dropdown-menu">
             <form class="">
               <div class="form-group">
@@ -27,16 +27,23 @@
               <div class="form-group">
                 <input ng-model="user.password" class="form-control" placeholder="Password" type="password">
               </div>
-              <div class="form-group">
-                <a href="#">Forgot password?</a>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <a href="#" style="color: #506A85;">Forgot&nbsp;password?</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <button type="submit" ng-click="login()" class="btn btn-default signin" style="float: right;">Sign In</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <button type="submit" ng-click="login()" class="btn btn-primary">Sign In</button>
-              <hr>
-              <p>New To Farmplace?</p>
-              <a href="/signup" class="btn btn-default">Sign Up For Farm Place</a>
             </form>
           </ul>
-        <li id="navbtn"><p class="navbar-btn"><a href="/signup" class="btn nav-button signup">Sign up</a></p></li>
+        <li id="navbarbtn"><p class="navbar-btn"><a href="/signup" class="btn nav-button signup">Sign up</a></p></li>
       </ul>
     </div>
   </div>
@@ -54,7 +61,7 @@
   <div class="container slider-content">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
-        <h2>Find Agricultural Internships and Trainings Around You</h2>
+        <h2>Find Agricultural Internships and Training Around You</h2>
         <p>This is a platform to train young people in different agricultural ventures and proper farm business management practices to equip them with skills to start and operate a profitable agribusiness.</p>
         <div class="search-form">
           <form action="" class=" form-inline">
