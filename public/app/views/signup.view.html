@@ -9,121 +9,120 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Farm Place</a>
+      <a class="navbar-brand" href="/">Farm Place</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="main-nav nav navbar-nav navbar-right">
-        <li class="links"><a href="#">Home</a></li>
-        <li class="links"><a href="#about">About</a></li>
-        <li class="links lastlink"><a href="#">Contact</a></li>
-        <li class="but"><p class="navbar-btn"><a href="/" class="btn nav-button">Sign in</a></p></li>
-        <li class="but"><p class="navbar-btn"><a href="/signup" class="btn nav-button signup">Sign up</a></p></li>     
+
       </ul>
     </div> <!-- /.navbar-collapse -->
   </div> <!-- /.container-fluid -->
 </nav>
 
 <div class="formdiv">
-<div class="container">
-  <div class="row">
-    <br>
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-      <div class="well">
-        <form role="form">
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="newUser.firstname" placeholder="First Name">
+  <div class="container">
+    <div class="row">
+      <br>
+      <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <div class="well">
+          <form role="form">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" ng-model="newUser.firstname" placeholder="First Name">
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" ng-model="newUser.lastname" placeholder="Last Name">
+                </div>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="newUser.lastname" placeholder="Last Name">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="newUser.username" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" ng-model="newUser.email" placeholder="Email Address">
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <input list="states" class="form-control" ng-model="newUser.address" placeholder="Current Location (State)">
+                <datalist id="states">
+                  <option>Outside Nigeria</option>
+                  <option>Abia</option>
+                  <option>Adamawa</option>
+                  <option>Akwa Ibom</option>
+                  <option>Anambra</option>
+                  <option>Bauchi</option>
+                  <option>Bayelsa</option>
+                  <option>Benue</option>
+                  <option>Borno</option>
+                  <option>Cross River</option>
+                  <option>Delta</option>
+                  <option>Ebonyi</option>
+                  <option>Edo</option>
+                  <option>Ekiti</option>
+                  <option>Enugu</option>
+                  <option>Federal Capital Territory</option>
+                  <option>Gombe</option>
+                  <option>Imo</option>
+                  <option>Jigawa</option>
+                  <option>Kaduna</option>
+                  <option>Kano</option>
+                  <option>Katsina</option>
+                  <option>Kebbi</option>
+                  <option>Kogi</option>
+                  <option>Kwara</option>
+                  <option>Lagos</option>
+                  <option>Nassarawa</option>
+                  <option>Niger</option>
+                  <option>Ogun</option>
+                  <option>Ondo</option>
+                  <option>Osun</option>
+                  <option>Oyo</option>
+                  <option>Plateau</option>
+                  <option>Rivers</option>
+                  <option>Sokoto</option>
+                  <option>Taraba</option>
+                  <option>Yobe</option>
+                  <option>Zamfara</option>
+                </datalist>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="tel" class="form-control" ng-model="newUser.phoneno" placeholder="Phone Number">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="newUser.username" placeholder="Username">
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" ng-model="newUser.email" placeholder="Email Address">
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <input list="states" class="form-control" ng-model="newUser.address" placeholder="Current Location (State)">
-              <datalist id="states">
-                <option>Outside Nigeria</option>
-                <option>Abia</option>
-                <option>Adamawa</option>
-                <option>Akwa Ibom</option>
-                <option>Anambra</option>
-                <option>Bauchi</option>
-                <option>Bayelsa</option>
-                <option>Benue</option>
-                <option>Borno</option>
-                <option>Cross River</option>
-                <option>Delta</option>
-                <option>Ebonyi</option>
-                <option>Edo</option>
-                <option>Ekiti</option>
-                <option>Enugu</option>
-                <option>Federal Capital Territory</option>
-                <option>Gombe</option>
-                <option>Imo</option>
-                <option>Jigawa</option>
-                <option>Kaduna</option>
-                <option>Kano</option>
-                <option>Katsina</option>
-                <option>Kebbi</option>
-                <option>Kogi</option>
-                <option>Kwara</option>
-                <option>Lagos</option>
-                <option>Nassarawa</option>
-                <option>Niger</option>
-                <option>Ogun</option>
-                <option>Ondo</option>
-                <option>Osun</option>
-                <option>Oyo</option>
-                <option>Plateau</option>
-                <option>Rivers</option>
-                <option>Sokoto</option>
-                <option>Taraba</option>
-                <option>Yobe</option>
-                <option>Zamfara</option>
-              </datalist>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="tel" class="form-control" ng-model="newUser.phoneno" placeholder="Phone Number">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="password" class="form-control" ng-model="newUser.password" placeholder="Password">
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Confirm Password">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="password" class="form-control" ng-model="newUser.password" placeholder="Password">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                By clicking <strong class="label label-default">Sign Up</strong>, you agree to the <a class="terms" href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.
               </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirm Password">
+            <div class="row signupin-div">
+              <div class="col-xs-12 col-md-12">
+                <a href="#" ng-click="signup()" id="signupin-but" class="btn btn-default btn-block">Sign Up</a>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-              By clicking <strong class="label label-default">Register</strong>, you agree to the <a class="terms" href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.
-            </div>
-          </div>
-          <div class="row reg-but">
-            <div class="col-xs-12 col-md-12">
-              <a href="#" ng-click="signup()" id="register-but" class="btn btn-default btn-block">Sign Up</a>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
+
+<p>Already have an account? <a href="/signin">Sign in</a></p>
+
