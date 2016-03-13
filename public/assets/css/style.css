@@ -65,9 +65,10 @@
   padding: 0 2px;
 }
 .navbar-right .dropdown-menu {
-  right: 55px;
+  right: 60px;
   left: auto;
   width: 250px;
+  margin-top: 0;
 }
 .navbar-right .dropdown-menu .form-control {
   width: 90%;
