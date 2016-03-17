@@ -1,29 +1,40 @@
 angular.module('farmplace')
   .controller('UserCtrl', ['$scope', 'UserService', '$location', '$window', function($scope, UserService, $location, $window) {
 
-    $scope.saveSessStorage = function(id, token) {
-      $window.sessionStorage.token = token;
-      $window.sessionStorage.userId = id;
+    $scope.saveToLS = function(id, token) {
+      localStorage.setItem('id', id);
+      localStorage.setItem('token', token);
     };
 
     // this function creates a new user
-    $scope.signup = function() {
-      UserService.signup($scope.newUser).then(function(res) {
-        $scope.saveSessStorage(res.data.id, res.data.token);
-        $location.url('/dashboard');
-        console.log(res);
-      }, function(err) {
-        console.log(err);
-      });
+    $scope.userSignup = function() {
+      if ($scope.user === undefined) {
+        $scope.error = 'Please fill the required field(s)!';
+        $('#error').show();
+      }
+      else if ($scope.user.password !== $scope.user.confirmPassword) {
+        $scope.error = 'Password Mismatch!';
+        $('#error').show();
+      } 
+      else {
+        UserService.userSignup($scope.user).then(function(res) {
+          $scope.saveToLS(res.data.id, res.data.token);
+          $location.url('/dashboard');
+        }, function(err) {
+          $scope.error = err.data.message;
+          $('#error').show();
+        });
+      }
     };
 
-    $scope.login = function() {
-      UserService.login($scope.user).then(function(res) {
-        $scope.saveSessStorage(res.data.id, res.data.token);
+    // this function signs a user in
+    $scope.userSignin = function() {
+      UserService.userSignin($scope.user).then(function(res) {
+        $scope.saveToLS(res.data.id, res.data.token);
         $location.url('/dashboard');
-        console.log(res);
       }, function(err) {
-        console.log(err);
+        $scope.error = err.data.message;
+        $('#error').show();
       });
     };
 

@@ -41,8 +41,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       return {
         'request': function(config) {
           config.headers = config.headers || {};
-          if ($window.sessionStorage.token) {
-            config.headers['x-access-token'] = $window.sessionStorage.token;
+          if (localStorage.getItem('token')) {
+            config.headers['x-access-token'] = localStorage.getItem('token');
+            // $location.url('/dashboard');
           }
           return config;
         },
