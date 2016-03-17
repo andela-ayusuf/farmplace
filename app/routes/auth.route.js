@@ -5,8 +5,8 @@ function authRoutes(router) {
   router.route('/user/signup')
     .post(authCtrl.userSignup);
 
-  router.route('/user/login')
-    .post(authCtrl.userLogin);
+  router.route('/user/signin')
+    .post(authCtrl.userSignin);
 
   // farm owner auth routes
   router.route('/farmOwner/signup')
