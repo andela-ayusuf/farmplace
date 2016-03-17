@@ -59,7 +59,7 @@
   color: #506A85;
 }
 .nav-button:hover{
-  background: #c2c2c2;
+  background: #28a328;
   color: #fff;
 }
 #navbarbtn {
@@ -83,6 +83,9 @@
   color: #fff;
   padding: 5px 15px;
   border-radius: 4px;
+}
+.navbar-right .dropdown-menu .signin:hover {
+  background-color: #28a328;
 }
 
 /*slider*/
@@ -340,4 +343,10 @@
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+#signupin-but:hover {
+  background-color: #28a328;
+}
+.quest {
+  text-align: center;
 }
