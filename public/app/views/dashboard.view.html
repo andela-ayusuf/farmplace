@@ -1,54 +1,37 @@
 <!-- nav bar -->
 <ng-include src="'app/views/navbar.view.html'"></ng-include>
 
-<!-- search bar -->
-<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4>Search Bar</h4>
-    </div>
-    <div class="item">
-      <div class="row" style="margin: auto">
-        <div class="col-md-12" ng-repeat="job in jobs">
-          <h3 class="no-margin-top"><a href="" class="">job.title<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
-          <!-- <h5><span class="color-black">{{job.location}}</span> - <span>Austin, TX</span></h5>
-          <p class="text-truncate ">{{job.description}}</p>
-          <hr> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- job posting -->
-<div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1" ng-controller="JobCtrl" data-ng-init="getAllJobs()">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4>Jobs</h4>
-    </div>
-    <div class="item">
-      <div class="row" style="margin: auto">
-        <div class="col-md-12" ng-repeat="job in jobs">
-          <h3 class="no-margin-top"><a href="" class="">{{job.title}}<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
-          <h5><span class="color-black">{{job.location}}</span> - <span>Austin, TX</span></h5>
-          <p class="text-truncate ">{{job.description}}</p>
-          <hr>
+<div class="row jobs">
+  <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1" ng-controller="JobCtrl" data-ng-init="getAllJobs()">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Jobs</h4>
+      </div>
+      <div class="item">
+        <div class="row" style="margin: auto">
+          <div class="col-md-12" ng-repeat="job in jobs">
+            <h3 class="no-margin-top"><a href="" class="">Farm Intern<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
+            <h5>Odogwu Farms</h5>
+            <div class="row"></div>
+            <p class="text-truncate">Lagos</p>
+            <hr>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- features -->
-<div class="col-md-4 col-sm-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h5>Featured Companies</h5></div>
-    <div class="panel-body">
-      <div class="list-group">
-        <a href="http://usebootstrap.com/theme/google-plus" class="list-group-item">Modal / Dialog</a>
-        <a href="http://usebootstrap.com/theme/google-plus" class="list-group-item">Datetime Examples</a>
-        <a href="http://usebootstrap.com/theme/google-plus" class="list-group-item">Data Grids</a>
+  <!-- features -->
+  <div class="col-md-3 col-sm-4 col-md-offset-">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5>Featured Companies</h5></div>
+      <div class="panel-body">
+        <div class="list-group">
+          <a href="http://usebootstrap.com/theme/google-plus" class="list-group-item">Modal / Dialog</a>
+          <a href="http://usebootstrap.com/theme/google-plus" class="list-group-item">Datetime Examples</a>
+          <a href="http://usebootstrap.com/theme/google-plus" class="list-group-item">Data Grids</a>
+        </div>
       </div>
     </div>
   </div>
