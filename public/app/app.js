@@ -37,23 +37,46 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
 
-    $httpProvider.interceptors.push(['$q', '$location', '$window', function($q, $location, $window) {
-      return {
-        'request': function(config) {
-          config.headers = config.headers || {};
-          if (localStorage.getItem('token')) {
-            config.headers['x-access-token'] = localStorage.getItem('token');
-            // $location.url('/dashboard');
-          }
-          return config;
-        },
-        'responseError': function(response) {
-          if (response.status === 403) {
-            $location.url('/home');
-          }
-          return $q.reject(response);
-        }
-      };
-    }]);
+    // $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
+    //   return {
+    //     'request': function(config) {
+    //       config.headers = config.headers || {};
+    //       if (localStorage.getItem('token')) {
+    //         config.headers['x-access-token'] = localStorage.getItem('token');
+    //         $location.url('/dashboard');
+    //       }
+    //       return config;
+    //     },
+    //     'responseError': function(response) {
+    //       if (response.status === 403) {
+    //         $location.url('/home');
+    //       }
+    //       return $q.reject(response);
+    //     }
+    //   };
+    // }]);
 
 }]);
+
+
+
+// angular.module('farmplace').run([
+//   '$http',
+//   '$rootScope',
+//   '$state',
+//   '$location',
+//   'UserService',
+//   function($http, $rootScope, $state, $location, UserService) {
+//     var token = localStorage.getItem('token');
+//     $http.defaults.headers.common['x-access-token'] = token;
+
+//     $rootScope.$on('$stateChangeStart', function(event, toState) {
+//       if (UserService.checkUser()) {
+//         if (toState.templateUrl == 'app/views/landing.view.html' || toState.templateUrl == 'app/views/signup.view.html') {
+//           $location.path('/dashboard');
+//         }
+//       }
+//     });
+// }]);
+
+
