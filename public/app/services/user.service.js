@@ -15,5 +15,9 @@ angular.module('farmplace')
       return $http.post(baseUrl + '/api/user/signin', user);
     };
 
+    User.getUser = function(id) {
+    	return $http.get(baseUrl + '/api/user/' + id);
+    };
+
 		return User;
 	}]);

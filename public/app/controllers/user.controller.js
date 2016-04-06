@@ -38,6 +38,14 @@ angular.module('farmplace')
       });
     };
 
+    $scope.getUser = function() {
+      var id = localStorage.getItem('id');
+      UserService.getUser(id).then(function(res) {
+        $scope.user = res.data;
+      }, function(err) {
+      })
+    };
+
 
     $(window).load(function() { // makes sure the whole site is loaded
       $('#status').fadeOut(); // will first fade out the loading animation
