@@ -37,24 +37,24 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
 
-    // $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
-    //   return {
-    //     'request': function(config) {
-    //       config.headers = config.headers || {};
-    //       if (localStorage.getItem('token')) {
-    //         config.headers['x-access-token'] = localStorage.getItem('token');
-    //         $location.url('/dashboard');
-    //       }
-    //       return config;
-    //     },
-    //     'responseError': function(response) {
-    //       if (response.status === 403) {
-    //         $location.url('/home');
-    //       }
-    //       return $q.reject(response);
-    //     }
-    //   };
-    // }]);
+    $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
+      return {
+        'request': function(config) {
+          config.headers = config.headers || {};
+          if (localStorage.getItem('token')) {
+            config.headers['x-access-token'] = localStorage.getItem('token');
+            // $location.url('/dashboard');
+          }
+          return config;
+        },
+        'responseError': function(response) {
+          if (response.status === 403) {
+            $location.url('/home');
+          }
+          return $q.reject(response);
+        }
+      };
+    }]);
 
 }]);
 
