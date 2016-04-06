@@ -20,7 +20,10 @@ var jobSchema = new Schema({
 	},
 	datePosted: {
 		type: Date,
-    default: Date.now
+    default: new Date()
+	},
+	expiryDate: {
+		type: Date
 	}
 });
 

@@ -1,11 +1,24 @@
 var Job = require('../models/job.model');
 
 exports.postJob = function(req, res) {
+  var year = req.body.year;
+  var a = req.body.month;
+  var b = req.body.day;
+
+  var month = +a - 1;
+  var day = +b + 1;
+
+  function expire(year, month, day) {
+    var dates = new Date(year, month, day);
+    return dates;
+  }
+
 	var job = new Job();
 	job.ownerId = req.decoded._id;
 	job.title = req.body.title;
 	job.description = req.body.description;
 	job.location = req.body.location;
+  job.expiryDate = expire(year, month, day);
 
 	job.save(function(err) {
     if (err) {
@@ -84,5 +97,4 @@ exports.deleteJob = function(req, res) {
     }
   });
 };
-
 
