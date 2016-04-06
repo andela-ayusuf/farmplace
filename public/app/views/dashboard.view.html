@@ -11,10 +11,10 @@
       <div class="item">
         <div class="row" style="margin: auto">
           <div class="col-md-12" ng-repeat="job in jobs">
-            <h3 class="no-margin-top"><a href="" class="">Farm Intern<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
+            <h3 class="no-margin-top"><a href="" class="">{{job.title}}<i class="fa fa-link color-white-mute font-1x"></i></a></h3>
             <h5>Odogwu Farms</h5>
             <div class="row"></div>
-            <p class="text-truncate">Lagos</p>
+            <p class="text-truncate">{{job.description}}</p>
             <hr>
           </div>
         </div>
