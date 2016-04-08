@@ -18,6 +18,11 @@ var jobSchema = new Schema({
 		type: String,
 		required: true
 	},
+	agricType: {
+		type: String,
+		required: true,
+		enum: ['arable', 'livestock', 'mixed']
+	},
 	datePosted: {
 		type: Date,
     default: new Date()
