@@ -361,3 +361,23 @@
 .jobs {
   padding-top: 100px;
 }
+.search-details-left {
+  float: left;
+}
+.search-details-right {
+  float: right;
+}
+.search-details-down {
+  margin-top: 13px;
+}
+.job-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.job-ttl {
+  color: #506a85;
+}
+.glyphicon {
+  color: #99e599;
+}
+
