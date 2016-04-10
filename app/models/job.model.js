@@ -14,6 +14,10 @@ var jobSchema = new Schema({
 		type: String,
 		required: true
 	},
+	farmName: {
+		type: String,
+		ref: 'FarmOwner'
+	},
 	location: {
 		type: String,
 		required: true
