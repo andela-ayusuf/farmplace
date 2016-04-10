@@ -18,7 +18,7 @@ var farmOwnerSchema = new Schema({
 		trim: true,
 		match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 	},
-	phoneno: {
+	phoneNo: {
 		type: Number,
 		required: true,
 		unique: true,
