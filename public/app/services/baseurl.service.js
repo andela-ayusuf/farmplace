@@ -1,2 +1,2 @@
 angular.module('farmplace')
-  .value('baseUrl', 'http://localhost:5000');
+  .value('baseUrl', 'https://farmplace.herokuapp.com');
