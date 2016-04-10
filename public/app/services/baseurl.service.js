@@ -1,2 +1,2 @@
 angular.module('farmplace')
-  .value('baseUrl', 'https://farmplace.herokuapp.com');
+  .value('baseUrl', 'http://farmplace.herokuapp.com');
