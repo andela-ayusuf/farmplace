@@ -1,4 +1,4 @@
-var app = angular.module('farmplace', ['ui.router']);
+var app = angular.module('farmplace', ['ui.router', 'angularMoment']);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
 
