@@ -12,41 +12,41 @@
         <div class="list-group-item" ng-repeat="job in jobs">
           <div class="search-details-top clearfix">
             <div class="search-details-left">
-              <p class="job-title"><a class="job-ttl" href="">Farm Intern</a></p>
+              <p class="job-title"><a class="job-ttl" href="">{{job.title | capitalize}}</a></p>
             </div>
             <div class="search-details-right">
-              <p class="job-date">Mixed</p>
+              <p class="job-date">{{job.agricType | capitalize}} Farming</p>
             </div>
           </div>
-          <p class="list-group-item-text">Odogwu Farm</p>
+          <p class="list-group-item-text">{{job.farmName | capitalize}}</p>
           <div class="search-details-down clearfix">
             <div class="search-details-left">
-              <p class="job-location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Lagos</p>
+              <p class="job-location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location | capitalize}}</p>
             </div>
             <div class="search-details-right">
-              <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Date</p>
+              <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar }}</p>
             </div>
           </div>
         </div>
-          
-            <ul class="pagination">
-              <li>
-                <a href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                <a href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-      
+        <div class="text-center pgntn">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -58,9 +58,9 @@
         <h5>Featured Companies</h5></div>
       <div class="panel-body">
         <div class="list-group">
-          <a href="" class="list-group-item">Modal / Dialog</a>
-          <a href="" class="list-group-item">Datetime Examples</a>
-          <a href="" class="list-group-item">Data Grids</a>
+          <a href="" class="list-group-item">Modal Farms</a>
+          <a href="" class="list-group-item">Blog Farms</a>
+          <a href="" class="list-group-item">Data Farms</a>
         </div>
       </div>
     </div>
