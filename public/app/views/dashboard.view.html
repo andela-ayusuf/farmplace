@@ -3,7 +3,7 @@
 
 <!-- job posting -->
 <div class="row jobs">
-  <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1" ng-controller="JobCtrl" data-ng-init="getAllJobs()">
+  <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1" ng-controller="JobCtrl" data-ng-init="getAllJobs()">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4>Jobs</h4>
@@ -24,11 +24,11 @@
               <p class="job-location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location | capitalize}}</p>
             </div>
             <div class="search-details-right">
-              <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar }}</p>
+              <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
             </div>
           </div>
         </div>
-        <div class="text-center pgntn">
+        <div class="text-center">
           <ul class="pagination">
             <li>
               <a href="#" aria-label="Previous">
@@ -52,7 +52,7 @@
   </div>
 
   <!-- features -->
-  <div class="col-md-3 col-sm-4 col-md-offset-">
+  <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h5>Featured Companies</h5></div>
