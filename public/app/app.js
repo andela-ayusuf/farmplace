@@ -8,9 +8,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       templateUrl: 'app/views/landing.view.html',
       controller: 'UserCtrl'
     })
-    .state('signin', {
-      url: '/signin',
-      templateUrl: 'app/views/signin.view.html',
+    .state('login', {
+      url: '/login',
+      templateUrl: 'app/views/login.view.html',
       controller: 'UserCtrl'
     })
     .state('signup', {

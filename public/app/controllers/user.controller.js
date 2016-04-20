@@ -28,8 +28,8 @@ angular.module('farmplace')
     };
 
     // this function signs a user in
-    $scope.userSignin = function() {
-      UserService.userSignin($scope.user).then(function(res) {
+    $scope.userLogin = function() {
+      UserService.userLogin($scope.user).then(function(res) {
         $scope.saveToLS(res.data.id, res.data.token);
         $location.url('/dashboard');
       }, function(err) {

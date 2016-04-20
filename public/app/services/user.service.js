@@ -11,8 +11,8 @@ angular.module('farmplace')
 			return $http.post(baseUrl + '/api/user/signup', user);
 		};
 
-		User.userSignin = function(user) {
-      return $http.post(baseUrl + '/api/user/signin', user);
+		User.userLogin = function(user) {
+      return $http.post(baseUrl + '/api/user/login', user);
     };
 
     User.getUser = function(id) {

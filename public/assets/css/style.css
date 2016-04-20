@@ -54,7 +54,7 @@
   color: #fff;
   margin-right: 5px;
 }
-.nav-button.signin{
+.nav-button.log-in{
   background-color: #fff;
   color: #506A85;
 }
@@ -65,18 +65,12 @@
 #navbarbtn {
   padding: 0 2px;
 }
-/*.navbar-right .dropdown-menu {
-  right: 60px;
-  width: 250px;
-  margin-top: 0;
-  height: 145px;
-}*/
 .navbar-right .dropdown-menu .form-control {
   width: 90%;
   margin: auto;
   margin-top: 7px;
 }
-.navbar-right .dropdown-menu .signin {
+.navbar-right .dropdown-menu .log-in {
   margin-top: -5px;
   background-color: #33cc33;
   border: medium none;
@@ -84,7 +78,7 @@
   padding: 5px 15px;
   border-radius: 4px;
 }
-.navbar-right .dropdown-menu .signin:hover {
+.navbar-right .dropdown-menu .log-in:hover {
   background-color: #28a328;
 }
 
@@ -313,7 +307,7 @@
   text-decoration: none;
 }
 
-/*SIGNUP AND SIGNIN PAGES*/
+/*SIGNUP AND LOG IN PAGES*/
 .formdiv {
   margin-top: 80px;
 }

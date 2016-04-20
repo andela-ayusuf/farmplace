@@ -47,7 +47,7 @@ exports.userSignup = function(req, res) {
 };
 
 // this method logs a user in
-exports.userSignin = function(req, res) {
+exports.userLogin = function(req, res) {
   User.findOne({
       username: req.body.username
     })
