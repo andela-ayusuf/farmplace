@@ -1,6 +1,8 @@
 var jwt = require('jsonwebtoken');
 var User = require('../models/user.model');
 var config = require('../../config/config');
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
 // this method authenticates user
 exports.middleware = function(req, res, next) {
@@ -30,42 +32,53 @@ exports.middleware = function(req, res, next) {
 
 // this method returns a single user
 exports.getUser = function(req, res) {
-  User.findById(req.params.id, function(err, user) {
-    if (err) {
-      res.send(err);
-    }
-    else {
-      res.status(200).send(user);
-    }
+  User.findById(req.params.id)
+  .then(function(user) {
+    res.status(200).send(user);
+  })
+  .catch(function(err) {
+    res.status(401).send({
+      success: false,
+      message: 'User not found.',
+      error: err
+    });
   });
 };
 
 // this method allows user information to be edited
 exports.editUser = function(req, res) {
-  User.findByIdAndUpdate(req.params.id, req.body, function(err, user) {
-    if (err) {
-      return res.send(err);
-    }
-    else {
-      res.status(200).send({
-        success: true,
-        message: 'Account Updated!'
-      });
-    }
+  User.findByIdAndUpdate(req.params.id, req.body)
+  .then(function(user) {
+    res.status(200).send({
+      success: true,
+      message: 'Account Updated!'
+    });
+  })
+  .catch(function(err) {
+    res.status(401).send({
+      success: false,
+      message: 'Please try again.',
+      error: err
+    });
   });
 };
 
 // this method deletes a user account
 exports.deleteUser = function(req, res) {
-  User.findById(req.params.id).remove(function(err, user) {
-    if (err) {
-      return res.send(err);
-    }
-    else {
-      res.status(200).send({
-        success: true,
-        message: 'Account Deleted'
-      });
-    }
+  User.findById(req.params.id)
+  .remove()
+  .then(function(user) {
+    res.status(200).send({
+      success: true,
+      message: 'Account Deleted'
+    });
+  })
+  .catch(function(err) {
+    res.status(401).send({
+      success: false,
+      message: 'Account not deleted.',
+      error: err
+    });
   });
 };
+
