@@ -11,7 +11,7 @@ exports.userSignup = function(req, res) {
   user.lastname = req.body.lastname;
   user.email = req.body.email;
   user.password = req.body.password;
-  user.phoneno = req.body.phoneno;
+  user.phoneNo = req.body.phoneNo;
   user.address = req.body.address;
 
   user.save(function(err) {
