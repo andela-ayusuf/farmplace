@@ -42,7 +42,11 @@ exports.userSignup = function(req, res) {
       });
     }
     else {
-      return res.status(401).send(err);
+      return res.status(403).send({
+        success: false,
+        message: 'An error occured.',
+        error: err
+      });
     }
   });
 };
@@ -70,7 +74,7 @@ exports.userLogin = function(req, res) {
       var token = jwt.sign(user, config.secret, {
         expiresIn: 1440
       });
-      res.status(200).send({
+      return res.status(200).send({
         success: true,
         token: token,
         message: 'Welcome ' + user.username,
@@ -79,7 +83,11 @@ exports.userLogin = function(req, res) {
     }
   })
   .catch(function(err) {
-    res.send(err);
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
   });
 };
 
@@ -103,7 +111,7 @@ exports.farmOwnerSignup = function(req, res) {
     var token = jwt.sign(farmOwner, config.secret, {
       expiresIn: 1440
     });
-    res.status(200).send({
+    return res.status(200).send({
       success: true,
       token: token,
       message: 'Welcome ' + farmOwner.firstname,
@@ -124,7 +132,11 @@ exports.farmOwnerSignup = function(req, res) {
       });
     }
     else {
-      return res.status(401).send(err);
+      return res.status(403).send({
+        success: false,
+        message: 'An error occured.',
+        error: err
+      });
     }
   });
 };
@@ -152,7 +164,7 @@ exports.farmOwnerLogin = function(req, res) {
       var token = jwt.sign(farmOwner, config.secret, {
         expiresIn: 1440
       });
-      res.status(200).send({
+      return res.status(200).send({
         success: true,
         token: token,
         message: 'Welcome ' + farmOwner.firstname,
@@ -161,35 +173,29 @@ exports.farmOwnerLogin = function(req, res) {
     }
   })
   .catch(function(err) {
-    res.send(err);
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
   });
 };
 
 // this method logs a user out
 exports.logout = function(req, res) {
-  req.session.destroy(function(err, success) {
-    if (err) {
-      res.send(err);
-    } 
-    else {
-      res.send({
-        success: true,
-        message: 'You have logged out.'
-      });
-    }
-  });
-};
-
-exports.logout = function(req, res) {
   req.session.destroy()
   .then(function(success) {
-    res.send({
+    return res.send({
       success: true,
       message: 'You have logged out.'
     });
   })
   .catch(function(err) {
-    res.send(err);
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
   });
 };
 

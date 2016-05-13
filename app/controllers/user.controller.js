@@ -34,12 +34,20 @@ exports.middleware = function(req, res, next) {
 exports.getUser = function(req, res) {
   User.findById(req.params.id)
   .then(function(user) {
-    res.status(200).send(user);
+    if (!user) {
+      return res.status(401).send({
+        success: false,
+        message: 'User not found.'
+      });
+    }
+    else {
+      return res.status(200).send(user);
+    }
   })
   .catch(function(err) {
-    res.status(401).send({
+    return res.status(403).send({
       success: false,
-      message: 'User not found.',
+      message: 'An error occured.',
       error: err
     });
   });
@@ -49,15 +57,15 @@ exports.getUser = function(req, res) {
 exports.editUser = function(req, res) {
   User.findByIdAndUpdate(req.params.id, req.body)
   .then(function(user) {
-    res.status(200).send({
+    return res.status(200).send({
       success: true,
       message: 'Account Updated!'
     });
   })
   .catch(function(err) {
-    res.status(401).send({
+    return res.status(403).send({
       success: false,
-      message: 'Please try again.',
+      message: 'An error occured.',
       error: err
     });
   });
@@ -68,15 +76,15 @@ exports.deleteUser = function(req, res) {
   User.findById(req.params.id)
   .remove()
   .then(function(user) {
-    res.status(200).send({
+    return res.status(200).send({
       success: true,
       message: 'Account Deleted'
     });
   })
   .catch(function(err) {
-    res.status(401).send({
+    return res.status(403).send({
       success: false,
-      message: 'Account not deleted.',
+      message: 'An error occured.',
       error: err
     });
   });

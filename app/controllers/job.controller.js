@@ -1,8 +1,13 @@
 var Job = require('../models/job.model');
 var FarmOwner = require('../models/farmOwner.model');
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
+// this method allows a farm owner to post a job
 exports.postJob = function(req, res) {
-  FarmOwner.findOne({email: req.decoded._doc.email}, function(err, farmOwner) {
+  // verify farm owner
+  FarmOwner.findOne({email: req.decoded._doc.email})
+  .then(function(farmOwner) {
     if (!farmOwner) {
       return res.status(403).send({
         success: false,
@@ -25,91 +30,127 @@ exports.postJob = function(req, res) {
       return dates;
     }
 
-  	var job = new Job();
-  	job.ownerId = farmOwnerId;
-  	job.title = req.body.title;
-  	job.description = req.body.description;
+    var job = new Job();
+    job.ownerId = farmOwnerId;
+    job.title = req.body.title;
+    job.description = req.body.description;
     job.farmName = farmOwnerFarmName;
-  	job.location = req.body.location;
+    job.location = req.body.location;
     job.agricType = req.body.agricType;
     job.expiryDate = expire(year, month, day);
 
-  	job.save(function(err) {
-      if (err) {
-        if (err.name === 'ValidationError') {
-          return res.status(401).send({
-            success: false,
-            message: 'Please fill the required field(s)!'
-          });
-        }
-        else {
-          return res.status(401).send(err);
-        }
+    // save/post a job
+    job.save()
+    .then(function(job) {
+      return res.status(200).send({
+        success: true,
+        message: 'Job Posted.',
+        id: job._id
+      });
+    })
+    .catch(function(err) {
+      if (err.name === 'ValidationError') {
+        return res.status(401).send({
+          success: false,
+          message: 'Please fill the required field(s)!'
+        });
       }
-  	  else {
-  	    return res.status(200).send({
-  	      success: true,
-  	      message: 'Job Posted.',
-  	      id: job._id
-  	    });
-  	  }
-  	});
-  });
+      else {
+        return res.status(403).send({
+          success: false,
+          message: 'An error occured.',
+          error: err
+        });
+      }
+    });
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
+  })
 };
 
+// this method returns all jobs in the db
 exports.getAllJobs = function(req, res) {
-	Job.find({}).exec(function(err, jobs) {
-    if (err) {
-      res.send(err);
-    } 
-    else if (!jobs) {
-      res.status(404).send({
+	Job.find({})
+  .exec()
+  .then(function(jobs) {
+    if (!jobs) {
+      return res.status(401).send({
         success: false,
-        message: 'Jobs Posting Not Found!'
+        message: 'Job Postings Not Found!'
       });
     } 
     else {
-      res.status(200).send(jobs);
+      return res.status(200).send(jobs);
     }
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
   });
 };
 
 exports.getJob = function(req, res) {
-	Job.find({_id: req.params.id}, function(err, job) {
-    if (err) {
-      res.send(err);
+	Job.find({_id: req.params.id})
+  .then(function(job) {
+    if (!job) {
+      return res.status(403).send({
+        success: false,
+        message: 'Couldnt find the job.'
+      });
     }
     else {
-      res.status(200).send(job);
+      return res.status(200).send(job);
     }
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
   });
 };
 
 exports.editJob = function(req, res) {
-	Job.findByIdAndUpdate(req.params.id, req.body, function(err, job) {
-    if (err) {
-      return res.send(err);
-    }
-    else {
-      res.status(200).send({
-        success: true,
-        message: 'Job Updated!'
-      });
-    }
+	Job.findByIdAndUpdate(req.params.id, req.body)
+  .then(function(job) {
+    return res.status(200).send({
+      success: true,
+      message: 'Job Updated!'
+    });
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
   });
 };
 
 exports.deleteJob = function(req, res) {
-	Job.findById(req.params.id).remove(function(err, job) {
-    if (err) {
-      return res.send(err);
-    }
-    else {
-      res.status(200).send({
-        success: true,
-        message: 'Job Deleted'
-      });
-    }
+	Job.findById(req.params.id)
+  .remove()
+  .then(function(job) {
+    return res.status(200).send({
+      success: true,
+      message: 'Job Deleted'
+    });
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
   });
 };
 
