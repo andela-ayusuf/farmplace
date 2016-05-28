@@ -11,14 +11,6 @@ angular.module('farmplace')
     };
 
   }])
-
-  .filter('capitalize', function() {
-    return function(input) {
-      return input.toLowerCase().replace( /\b\w/g, function (output) {
-        return output.toUpperCase();
-      });
-    }
-  })
   
   .filter('calendar', function() {
     return function(dateString) {

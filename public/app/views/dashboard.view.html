@@ -12,16 +12,16 @@
         <div class="list-group-item" ng-repeat="job in jobs">
           <div class="search-details-top clearfix">
             <div class="search-details-left">
-              <p class="job-title"><a class="job-ttl" href="">{{job.title | capitalize}}</a></p>
+              <p class="job-title text-capitalize"><a class="job-ttl" href="/job-details">{{job.title}}</a></p>
             </div>
             <div class="search-details-right">
-              <p class="job-date">{{job.agricType | capitalize}} Farming</p>
+              <p class="job-date text-capitalize">{{job.agricType}} Farming</p>
             </div>
           </div>
-          <p class="list-group-item-text">{{job.farmName | capitalize}}</p>
+          <p class="list-group-item-text text-capitalize">{{job.farmName}}</p>
           <div class="search-details-down clearfix">
             <div class="search-details-left">
-              <p class="job-location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location | capitalize}}</p>
+              <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location}}</p>
             </div>
             <div class="search-details-right">
               <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
