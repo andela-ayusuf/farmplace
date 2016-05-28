@@ -4,11 +4,23 @@ angular.module('farmplace')
     $scope.getAllJobs = function() {
       JobService.getAllJobs(sessionStorage.token).then(function(res) {
         $scope.jobs = res.data;
-        console.log($scope.jobs);
       }, function(err) {
-        console.log(err);
       });
     };
+
+    $scope.getJobId = function() {
+      var id = $window.sessionStorage.id;
+      return id;
+    };
+
+    $scope.getJob = function(id) {
+      $window.sessionStorage.id = id;
+      JobService.getJob(id).then(function(res) {
+        $location.url('/job-details');
+        $scope.job = res.data[0];
+      }, function(err) {
+      });
+    }
 
   }])
   
