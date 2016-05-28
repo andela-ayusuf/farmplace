@@ -12,7 +12,7 @@
         <div class="list-group-item" ng-repeat="job in jobs">
           <div class="search-details-top clearfix">
             <div class="search-details-left">
-              <p class="job-title text-capitalize"><a class="job-ttl" href="/job-details">{{job.title}}</a></p>
+              <p class="job-title text-capitalize"><a ng-click="getJob(job._id)" class="job-ttl" href="#">{{job.title}}</a></p>
             </div>
             <div class="search-details-right">
               <p class="job-date text-capitalize">{{job.agricType}} Farming</p>

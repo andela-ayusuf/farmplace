@@ -3,17 +3,28 @@
 
 <!-- job posting -->
 <div class="row jobs">
-  <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1" ng-controller="JobCtrl" data-ng-init="getJob()">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4>Jobs</h4>
-      </div>
-      <div class="">
+  <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1" ng-controller="JobCtrl" data-ng-init="getJob(getJobId())">
 
-      	<p>jfkglhjjkchfjgxfchvjhk</p>
+      <h2 class="text-capitalize">{{job.farmName}}</h2>
+      <h4 class="text-capitalize">{{job.title}}</h4>
 
+      <div class="" style="display: inline-block;">
+        <p class="text-capitalize">Agric Type: {{job.agricType}} Farming</p>
       </div>
-    </div>
+
+      <div class="" style="display: inline-block;">
+        <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location}}</p>
+      </div>
+
+      <div class="" style="display: inline-block;">
+        <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
+      </div>
+
+
+    	<p style="line-height: 200%">We are looking for smart, intelligent individuals with a passion for sales, beauty and style, to drive sales and place our products in every family. If you are someone with a need to help the sick, the ugly, obese and the poor in alleviating their sufferings and boost their self esteem, then you are the person we are looking for.</p>
+
+      <button type="button" class="btn btn-default">Apply</button>
+
   </div>
 
   <!-- features -->
