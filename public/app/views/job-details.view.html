@@ -1,38 +1,40 @@
 <!-- nav bar -->
 <ng-include src="'app/views/navbar.view.html'"></ng-include>
-
-<!-- job posting -->
-<div class="row jobs">
-  <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1" ng-controller="JobCtrl" data-ng-init="getJob(getJobId())">
-
-      <h2 class="text-capitalize">{{job.farmName}}</h2>
-      <h4 class="text-capitalize">{{job.title}}</h4>
-
-      <div class="" style="display: inline-block;">
-        <p class="text-capitalize">Agric Type: {{job.agricType}} Farming</p>
+<!--header strat here-->
+<div class="mother-grid" style="padding-top: 100px;" ng-controller="JobCtrl" data-ng-init="getJob(getJobId())">
+  <h2 class="text-capitalize" style="color: green;">{{job.title}}</h2>
+  <h4 class="text-capitalize">{{job.farmName}}</h4>
+  <div class="part-1">
+    <div class="block-3">
+      <div class="block-3-left">
+        <!-- <div class="wine-img">
+        </div> -->
+        <div class="wine-text">
+          <h1>Description</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.</p>
+          <div class="wine-comments">
+            <div class="wine-left">
+              <ul>
+                <li class="farm-type">
+                  <p class="text-capitalize"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> {{job.agricType}} Farming</p>
+                </li>
+                <li class="location">
+                  <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location}}</p>
+                </li>
+                <li class="date">
+                  <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
+                </li>
+              </ul>
+            </div>
+            <div class="wine-right">
+              <button type="submit" class="btn nav-button signup">Apply</button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
       </div>
-
-      <div class="" style="display: inline-block;">
-        <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location}}</p>
-      </div>
-
-      <div class="" style="display: inline-block;">
-        <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
-      </div>
-
-
-    	<p style="line-height: 200%">We are looking for smart, intelligent individuals with a passion for sales, beauty and style, to drive sales and place our products in every family. If you are someone with a need to help the sick, the ugly, obese and the poor in alleviating their sufferings and boost their self esteem, then you are the person we are looking for.</p>
-
-      <button type="button" class="btn btn-default">Apply</button>
-
-  </div>
-
-  <!-- features -->
-  <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h5>Featured Companies</h5></div>
-      <div class="panel-body">
+      <div class="block-3-right">
+        <h3>Featured Internships</h3>
         <div class="list-group">
           <a href="" class="list-group-item">Modal Farms</a>
           <a href="" class="list-group-item">Blog Farms</a>

@@ -375,3 +375,174 @@
   color: #99e599;
 }
 
+/*JOB DETAILS PAGE*/
+
+
+
+/*--mother-grid start here--*/
+.mother-grid{
+  width: 80%;
+  margin: 0em auto 0em;
+  padding: 2em 0em;
+}
+.block-3 {
+  margin-top: 3em;
+}
+
+.block-3-left {
+  float: left;
+  width: 63%;
+}
+.block-rit-btn a {
+  background:#a249b5;
+  font-size: 0.95em;
+  color: #fff;
+  padding: 0.5em 1em;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 2em;
+}
+.block-rit-btn a:hover {
+  background:#fc7fa3;
+}
+.block-3-right {
+  float: right;
+  width: 35%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1em 2em;
+  background:#FFFFFF;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
+}
+.wine-img {
+    background: url(../../assets/img/2.jpg)no-repeat center;
+    background-size: cover;
+    min-height: 360px;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px ;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -o-border-radius: 5px 5px 0px 0px;
+}
+.wine-text h1 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 18px;
+}
+.wine-text {
+    background: #fff;
+    padding: 2em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius:0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -o-border-radius: 0px 0px 5px 5px;
+    border-bottom: 3px solid #e3e4e8;
+}
+.wine-text p {
+    font-size: 15px;
+    line-height: 30px;
+}
+.wine-comments {
+    margin-top: 2em;
+}
+.wine-left {
+    float: left;
+    width: 50%;
+}
+.wine-right {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.wine-left ul {
+    padding: 0px;
+}
+.wine-left li {
+  list-style: none;
+  display: inline-block;
+}
+.wine-left .farm-type {
+  padding-right: 5px;
+}
+/*.wine-left .location {
+  padding-right: 5px;
+}
+.wine-left .date {
+  padding-left: 2px;
+}*/
+
+
+
+
+/*--media quores strat here--*/
+
+@media(max-width:1280px){
+
+.wine-text h1 {
+    font-size: 1.25em;  
+}
+/*.block-3-right {
+    padding: 3em 2em;
+}*/
+
+}
+@media(max-width:1024px){
+.mother-grid {
+    width: 90%; 
+}
+.wine-text h1 {
+    font-size: 1.2em;
+}
+.wine-img {
+    min-height: 330px;
+}
+
+}
+@media(max-width:768px){
+.block-3-right {
+    float: none;
+    width: 100%;
+}
+.block-3-left {
+    float: none;
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+.block-3 {
+    margin-top: 1.5em;
+}
+
+}
+
+@media(max-width:667px){
+.anky-middle ul li {
+    width: 32.2%;
+}
+.anky-middle span.anky-bar-1 {
+    left: 92px;
+}
+.anky-middle span.anky-bar-2 {
+    right: 92px;
+}
+}
+
+
+@media(max-width:480px){
+.wine-img {
+    min-height: 215px;
+}
+.wine-text {
+    padding: 1em;
+}
+.wine-text h1 {
+    font-size: 1em;
+}
+.wine-comments {
+    margin-top: 1em;
+}
+.block-3-right {
+    padding: 2em 2em;
+}
+
+}
+
