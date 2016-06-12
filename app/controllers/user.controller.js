@@ -32,7 +32,7 @@ exports.middleware = function(req, res, next) {
 
 // this method returns a single user
 exports.getUser = function(req, res) {
-  User.findById(req.params.id)
+  User.find({username: req.params.username})
   .then(function(user) {
     if (!user) {
       return res.status(401).send({
@@ -55,7 +55,7 @@ exports.getUser = function(req, res) {
 
 // this method allows user information to be edited
 exports.editUser = function(req, res) {
-  User.findByIdAndUpdate(req.params.id, req.body)
+  User.update({username: req.params.username}, req.body)
   .then(function(user) {
     return res.status(200).send({
       success: true,
@@ -73,8 +73,7 @@ exports.editUser = function(req, res) {
 
 // this method deletes a user account
 exports.deleteUser = function(req, res) {
-  User.findById(req.params.id)
-  .remove()
+  User.remove({username: req.params.username})
   .then(function(user) {
     return res.status(200).send({
       success: true,
