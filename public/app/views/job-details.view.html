@@ -1,19 +1,17 @@
 <!-- nav bar -->
 <ng-include src="'app/views/navbar.view.html'"></ng-include>
 <!--header strat here-->
-<div class="mother-grid" style="padding-top: 100px;" ng-controller="JobCtrl" data-ng-init="getJob(getJobId())">
-  <h2 class="text-capitalize" style="color: green;">{{job.title}}</h2>
+<div class="mother-grid" ng-controller="JobCtrl" data-ng-init="getJob(getJobId())">
+  <h2 class="text-capitalize">{{job.title}}</h2>
   <h4 class="text-capitalize">{{job.farmName}}</h4>
   <div class="part-1">
     <div class="block-3">
       <div class="block-3-left">
-        <!-- <div class="wine-img">
-        </div> -->
-        <div class="wine-text">
+        <div class="jobdet-text">
           <h1>Description</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.</p>
-          <div class="wine-comments">
-            <div class="wine-left">
+          <div class="jobdet-comments">
+            <div class="jobdet-left">
               <ul>
                 <li class="farm-type">
                   <p class="text-capitalize"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> {{job.agricType}} Farming</p>
@@ -26,7 +24,7 @@
                 </li>
               </ul>
             </div>
-            <div class="wine-right">
+            <div class="jobdet-right">
               <button type="submit" class="btn nav-button signup">Apply</button>
             </div>
             <div class="clearfix"></div>

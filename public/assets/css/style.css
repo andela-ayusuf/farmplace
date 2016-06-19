@@ -20,7 +20,7 @@
   padding-left: 20px;
 }
 .navbar-default .navbar-nav > li > a::after {
-  background-color: #33cc33;
+  background-color: #008000;
   bottom: -2px;
   content: "";
   height: 5px;
@@ -50,7 +50,7 @@
   transition: all 0.4s ease;
 }
 .nav-button.signup{
-  background-color: #33cc33;
+  background-color: #008000;
   color: #fff;
   margin-right: 5px;
 }
@@ -72,7 +72,7 @@
 }
 .navbar-right .dropdown-menu .log-in {
   margin-top: -5px;
-  background-color: #33cc33;
+  background-color: #008000;
   border: medium none;
   color: #fff;
   padding: 5px 15px;
@@ -138,7 +138,7 @@
   width: 195px;
 }
 .form-inline button{
-  background-color: #33cc33;
+  background-color: #008000;
   border: medium none;
   color: #fff;
   height: 40px;
@@ -187,7 +187,7 @@
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  border-bottom: 2px solid #33cc33
+  border-bottom: 2px solid #008000
 }
 .single-work h3{
   color: #506A85;
@@ -212,7 +212,7 @@
   transition: all 0.2s ease-in-out;
 }
 .single-work.active {  
-  background: #33cc33
+  background: #008000
 }
 .single-work.active h3{
   color: #fff
@@ -221,7 +221,7 @@
   color: #eeeeee
 }
 .single-work:hover{
-  background: #33cc33
+  background: #008000
 }
 .single-work:hover h3{
   color: #fff
@@ -248,7 +248,7 @@
   margin-top: 16px;
 }
 .wantto-section button {
-  background-color: #33cc33;
+  background-color: #008000;
   border: medium none;
   color: #fff;
   height: 32px;
@@ -269,7 +269,7 @@
 /*footer*/
 .footer-area{
   background: #506a85;
-  border-top: 4px solid #33cc33;
+  border-top: 4px solid #008000;
 }
 .footer{
   padding: 0px 0 10px 0;
@@ -303,7 +303,7 @@
   font-weight: 700;
 }
 .single-footer ul li a:hover{
-  color: #33cc33;
+  color: #008000;
   text-decoration: none;
 }
 
@@ -328,7 +328,7 @@
   color: #506A85;
 }
 #signupin-but {
-  background-color: #33cc33;
+  background-color: #008000;
   border: medium none;
   color: #fff;
   padding: 5px 15px;
@@ -369,21 +369,23 @@
   font-size: 20px;
 }
 .job-ttl {
-  color: #506a85;
+  color: #008000;
 }
 .glyphicon {
-  color: #99e599;
+  color: #008000;
 }
 
 /*JOB DETAILS PAGE*/
+/*jobdet means job details*/
 
-
-
-/*--mother-grid start here--*/
 .mother-grid{
   width: 80%;
   margin: 0em auto 0em;
   padding: 2em 0em;
+  padding-top: 100px;
+}
+.mother-grid h2 {
+  color: #008000;
 }
 .block-3 {
   margin-top: 3em;
@@ -414,7 +416,7 @@
   background:#FFFFFF;
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
 }
-.wine-img {
+.jobdet-img {
     background: url(../../assets/img/2.jpg)no-repeat center;
     background-size: cover;
     min-height: 360px;
@@ -423,12 +425,12 @@
     -moz-border-radius: 5px 5px 0px 0px;
     -o-border-radius: 5px 5px 0px 0px;
 }
-.wine-text h1 {
+.jobdet-text h1 {
   margin-bottom: 8px;
   font-size: 14px;
   line-height: 18px;
 }
-.wine-text {
+.jobdet-text {
     background: #fff;
     padding: 2em;
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
@@ -438,38 +440,35 @@
     -o-border-radius: 0px 0px 5px 5px;
     border-bottom: 3px solid #e3e4e8;
 }
-.wine-text p {
+.jobdet-text p {
     font-size: 15px;
     line-height: 30px;
 }
-.wine-comments {
-    margin-top: 2em;
+.jobdet-comments {
+  margin-top: 2em;
 }
-.wine-left {
-    float: left;
-    width: 50%;
+.jobdet-left {
+  float: left;
+  width: 80%;
 }
-.wine-right {
-    float: right;
-    width: 50%;
-    text-align: right;
+.jobdet-right {
+  float: right;
+  width: 20%;
+  text-align: right;
 }
-.wine-left ul {
-    padding: 0px;
+.jobdet-left ul {
+  padding: 0px;
 }
-.wine-left li {
+.jobdet-left li {
   list-style: none;
   display: inline-block;
 }
-.wine-left .farm-type {
-  padding-right: 5px;
+.jobdet-left .farm-type {
+  padding-right: 13px;
 }
-/*.wine-left .location {
-  padding-right: 5px;
+.jobdet-left .date {
+  padding-left: 15px;
 }
-.wine-left .date {
-  padding-left: 2px;
-}*/
 
 
 
@@ -478,7 +477,7 @@
 
 @media(max-width:1280px){
 
-.wine-text h1 {
+.jobdet-text h1 {
     font-size: 1.25em;  
 }
 /*.block-3-right {
@@ -490,10 +489,10 @@
 .mother-grid {
     width: 90%; 
 }
-.wine-text h1 {
+.jobdet-text h1 {
     font-size: 1.2em;
 }
-.wine-img {
+.jobdet-img {
     min-height: 330px;
 }
 
@@ -528,16 +527,16 @@
 
 
 @media(max-width:480px){
-.wine-img {
+.jobdet-img {
     min-height: 215px;
 }
-.wine-text {
+.jobdet-text {
     padding: 1em;
 }
-.wine-text h1 {
+.jobdet-text h1 {
     font-size: 1em;
 }
-.wine-comments {
+.jobdet-comments {
     margin-top: 1em;
 }
 .block-3-right {
