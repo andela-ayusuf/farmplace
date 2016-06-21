@@ -23,155 +23,143 @@
 </nav>
 
 
-<div class="mother-grid">
+<div class="fo-signup-main-div">
   <div class="part-1">
-    <div class="block">
-      <!-- sign up -->
-      <div class="block-left">
-        <h4>Sign Up</h4>
-        <form role="form">
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="newFo.firstname" placeholder="First Name">
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="newFo.lastname" placeholder="Last Name">
-              </div>
+    <!-- sign up -->
+    <div class="block-left">
+      <h4>Sign Up</h4>
+      <form role="form">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="newFo.firstname" placeholder="First Name">
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="email" class="form-control" ng-model="newFo.email" placeholder="Email Address">
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="tel" class="form-control" ng-model="newFo.phoneno" placeholder="Phone Number">
-              </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="newFo.lastname" placeholder="Last Name">
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="password" class="form-control" ng-model="newFo.password" placeholder="Password">
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="password" class="form-control" placeholder="Confirm Password">
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="email" class="form-control" ng-model="newFo.email" placeholder="Email Address">
             </div>
           </div>
-          <hr>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="newFo.farmName" placeholder="Farm Name">
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="newFo.typeOfAgric" placeholder="Agric Type">
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="number" class="form-control" ng-model="newFo.numOfEmployees" placeholder="Number of Employees">
-              </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="tel" class="form-control" ng-model="newFo.phoneno" placeholder="Phone Number">
             </div>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-model="newFo.address" placeholder="Address">
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <input list="states" class="form-control" ng-model="newFo.state" placeholder="State">
-              <datalist id="states">
-                <option>Outside Nigeria</option>
-                <option>Abia</option>
-                <option>Adamawa</option>
-                <option>Akwa Ibom</option>
-                <option>Anambra</option>
-                <option>Bauchi</option>
-                <option>Bayelsa</option>
-                <option>Benue</option>
-                <option>Borno</option>
-                <option>Cross River</option>
-                <option>Delta</option>
-                <option>Ebonyi</option>
-                <option>Edo</option>
-                <option>Ekiti</option>
-                <option>Enugu</option>
-                <option>Federal Capital Territory</option>
-                <option>Gombe</option>
-                <option>Imo</option>
-                <option>Jigawa</option>
-                <option>Kaduna</option>
-                <option>Kano</option>
-                <option>Katsina</option>
-                <option>Kebbi</option>
-                <option>Kogi</option>
-                <option>Kwara</option>
-                <option>Lagos</option>
-                <option>Nassarawa</option>
-                <option>Niger</option>
-                <option>Ogun</option>
-                <option>Ondo</option>
-                <option>Osun</option>
-                <option>Oyo</option>
-                <option>Plateau</option>
-                <option>Rivers</option>
-                <option>Sokoto</option>
-                <option>Taraba</option>
-                <option>Yobe</option>
-                <option>Zamfara</option>
-              </datalist>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="newFo.website" placeholder="Website">
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="password" class="form-control" ng-model="newFo.password" placeholder="Password">
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-              By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Confirm Password">
             </div>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-xs-12 col-md-12"><a href="#" ng-click="farmOwnerSignup()" class="btn btn-primary btn-block">Sign Up</a></div>
-          </div>
-        </form>
-      </div>
-      <!-- sign in -->
-      <div class="block-right">
-        <h4>Sign In</h4>
-        <form role="form">
-          <div class="form-group">
-            <input type="email" class="form-control" ng-model="fo.email" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" ng-model="fo.password" placeholder="Password">
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-              <a href="#">Forgot Password?</a>
+        </div>
+        <hr>
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="newFo.farmName" placeholder="Farm Name">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="newFo.typeOfAgric" placeholder="Agric Type">
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-12 col-md-12"><a href="#" ng-click="farmOwnerLogin()" class="btn btn-primary btn-block">Sign In</a></div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="number" class="form-control" ng-model="newFo.numOfEmployees" placeholder="Number of Employees">
+            </div>
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="newFo.address" placeholder="Address">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <input list="states" class="form-control" ng-model="newFo.state" placeholder="State">
+            <datalist id="states">
+              <option>Outside Nigeria</option>
+              <option>Abia</option>
+              <option>Adamawa</option>
+              <option>Akwa Ibom</option>
+              <option>Anambra</option>
+              <option>Bauchi</option>
+              <option>Bayelsa</option>
+              <option>Benue</option>
+              <option>Borno</option>
+              <option>Cross River</option>
+              <option>Delta</option>
+              <option>Ebonyi</option>
+              <option>Edo</option>
+              <option>Ekiti</option>
+              <option>Enugu</option>
+              <option>Federal Capital Territory</option>
+              <option>Gombe</option>
+              <option>Imo</option>
+              <option>Jigawa</option>
+              <option>Kaduna</option>
+              <option>Kano</option>
+              <option>Katsina</option>
+              <option>Kebbi</option>
+              <option>Kogi</option>
+              <option>Kwara</option>
+              <option>Lagos</option>
+              <option>Nassarawa</option>
+              <option>Niger</option>
+              <option>Ogun</option>
+              <option>Ondo</option>
+              <option>Osun</option>
+              <option>Oyo</option>
+              <option>Plateau</option>
+              <option>Rivers</option>
+              <option>Sokoto</option>
+              <option>Taraba</option>
+              <option>Yobe</option>
+              <option>Zamfara</option>
+            </datalist>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="newFo.website" placeholder="Website">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-md-12"><a href="#" ng-click="farmOwnerSignup()" id="signupin-but" class="btn btn-primary btn-block">Sign Up</a></div>
+        </div>
+      </form>
+    </div>
+    <!-- sign in -->
+    <div class="block-right">
+      <h4>Log In</h4>
+      <form role="form">
+        <div class="form-group">
+          <input type="email" class="form-control" ng-model="fo.email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" ng-model="fo.password" placeholder="Password">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <a href="#">Forgot Password?</a>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-md-12"><a href="#" ng-click="farmOwnerLogin()" id="signupin-but" class="btn btn-primary btn-block">Log In</a></div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-
-
-
-
-
-
