@@ -321,7 +321,7 @@
   background:#FFFFFF;
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
 }
-.signup-block h4, p {
+.signup-block h4, .signup-block p {
   text-align: center;
 }
 .signup-block p {
@@ -356,7 +356,7 @@
   background:#FFFFFF;
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
 }
-.login-block h4, p {
+.login-block h4, .login-block p {
   text-align: center;
 }
 .login-block p {
