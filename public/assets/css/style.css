@@ -307,24 +307,25 @@
 }
 
 /*SIGNUP AND LOG IN PAGES*/
-.formdiv {
-  margin-top: 80px;
+.signup-main-div {
+  width: 75%;
+  margin: 5px auto 0;
+  padding: 2em 0em;
+  padding-top: 80px;
 }
-.well {
-  background-color: #f0f0f0;
+.signup-block {
+  margin: 0 auto;
+  width: 58%;
+  padding: 1em 2em;
+  border-radius: 5px;
+  background:#FFFFFF;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
 }
-.label {
-  background-color: #506A85;
+.signup-block h4, p {
+  text-align: center;
 }
-.terms {
-  color: #506A85;
-}
-.signupin-div {
-  margin-top: 17px;
-}
-.terms:hover {
-  text-decoration: none;
-  color: #506A85;
+.signup-block p {
+  margin-top: 7px;
 }
 #signupin-but {
   background-color: #008000;
@@ -341,6 +342,26 @@
   background-color: #28a328;
 }
 
+.login-main-div {
+  width: 50%;
+  margin: 20px auto 0;
+  padding: 2em 0em;
+  padding-top: 80px;
+}
+.login-block {
+  margin: 0 auto;
+  width: 58%;
+  padding: 1em 2em;
+  border-radius: 5px;
+  background:#FFFFFF;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
+}
+.login-block h4, p {
+  text-align: center;
+}
+.login-block p {
+  margin-top: 7px;
+}
 
 /*DASHBOARD PAGE*/
 

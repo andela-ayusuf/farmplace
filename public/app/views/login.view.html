@@ -13,33 +13,27 @@
   </div> <!-- /.container-fluid -->
 </nav>
 
-<!-- form -->
-<div class="formdiv">
-  <div class="container">
-    <div class="row">
-      <br>
-      <div class="col-md-4 col-sm-6 col-xs-10 col-md-offset-4 col-sm-offset-3 col-xs-offset-1">
-        <div class="alert alert-danger collapse" id="error">
-          <strong>{{error}}</strong>
-        </div>
-        <div class="well">
-          <form role="form">
-            <div class="form-group">
-              <input type="text" class="form-control" ng-model="user.username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" ng-model="user.password" placeholder="Password">
-            </div>
-            <div class="row signupin-div">
-              <div class="col-xs-12 col-md-12">
-                <a href="#" id="signupin-but" ng-click="userLogin()" class="btn btn-default btn-block">Log in</a>
-              </div>
-            </div>
-            <p class="quest">Don't have an account? <a href="/signup">Sign Up</a></p>
-          </form>
+
+
+<div class="login-main-div">
+  <div class="login-block">
+    <h4>Log In</h4>
+    <div class="alert alert-danger collapse" id="error">
+      <strong>{{error}}</strong>
+    </div>
+    <form role="form">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="user.username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" ng-model="user.password" placeholder="Password">
+      </div>
+      <div class="row signupin-div">
+        <div class="col-xs-12 col-md-12">
+          <a href="#" id="signupin-but" ng-click="userLogin()" class="btn btn-default btn-block">Log in</a>
         </div>
       </div>
-    </div>
+      <p class="question">Don't have an account? <a href="/signup">Sign Up</a></p>
+    </form>
   </div>
 </div>
-
