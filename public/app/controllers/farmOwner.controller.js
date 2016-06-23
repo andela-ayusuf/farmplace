@@ -1,29 +1,39 @@
 angular.module('farmplace')
   .controller('FarmOwnerCtrl', ['$scope', 'FarmOwnerService', '$location', '$window', function($scope, FarmOwnerService, $location, $window) {
 
-    $scope.saveSessStorage = function(id, token) {
-      $window.sessionStorage.foToken = token;
-      $window.sessionStorage.foId = id;
+    $scope.saveToLS = function(id, token) {
+      localStorage.setItem('foId', id);
+      localStorage.setItem('foToken', token);
     };
 
-    // this function creates a new farm owner
     $scope.farmOwnerSignup = function() {
-      FarmOwnerService.farmOwnerSignup($scope.newFo).then(function(res) {
-        $scope.saveSessStorage(res.data.id, res.data.token);
-        $location.url('/foDashboard');
-        console.log(res);
-      }, function(err) {
-        console.log(err);
-      });
+      if ($scope.newFarmOwner === undefined) {
+        $scope.error = 'Please fill the required field(s)!';
+        $('#error').show();
+      }
+      else if ($scope.newFarmOwner.password !== $scope.newFarmOwner.confirmPassword) {
+        $scope.error = 'Password Mismatch!';
+        $('#error').show();
+      } 
+      else {
+        FarmOwnerService.farmOwnerSignup($scope.newFarmOwner).then(function(res) {
+          $scope.saveToLS(res.data.foId, res.data.foToken);
+          $location.url('/foDashboard');
+        }, function(err) {
+          $scope.error = err.data.message;
+          $('#error').show();
+        });
+      }
     };
 
     $scope.farmOwnerLogin = function() {
-      FarmOwnerService.farmOwnerLogin($scope.fo).then(function(res) {
-        $scope.saveSessStorage(res.data.id, res.data.token);
+      FarmOwnerService.farmOwnerLogin($scope.farmOwner).then(function(res) {
+        $scope.saveToLS(res.data.foId, res.data.foToken);
         $location.url('/foDashboard');
-        console.log(res);
       }, function(err) {
-        console.log(err);
+        $scope.error2 = err.data.message;
+        console.log('yyy', err.data.message)
+        $('#error2').show();
       });
     };
 

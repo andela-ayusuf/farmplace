@@ -28,65 +28,68 @@
     <!-- sign up -->
     <div class="fo-signup-block-left">
       <h4>Sign Up</h4>
+      <div class="alert alert-danger collapse" id="error">
+        <strong>{{error}}</strong>
+      </div>
       <form role="form">
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model="newFo.firstname" placeholder="First Name">
+              <input type="text" class="form-control" ng-model="newFarmOwner.firstname" placeholder="First Name">
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model="newFo.lastname" placeholder="Last Name">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="form-group">
-              <input type="email" class="form-control" ng-model="newFo.email" placeholder="Email Address">
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="form-group">
-              <input type="tel" class="form-control" ng-model="newFo.phoneno" placeholder="Phone Number">
+              <input type="text" class="form-control" ng-model="newFarmOwner.lastname" placeholder="Last Name">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="password" class="form-control" ng-model="newFo.password" placeholder="Password">
+              <input type="email" class="form-control" ng-model="newFarmOwner.email" placeholder="Email Address">
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Confirm Password">
+              <input type="tel" class="form-control" ng-model="newFarmOwner.phoneNo" placeholder="Phone Number">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="password" class="form-control" ng-model="newFarmOwner.password" placeholder="Password">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+              <input type="password" class="form-control" ng-model="newFarmOwner.confirmPassword" placeholder="Confirm Password">
             </div>
           </div>
         </div>
         <hr>
         <div class="form-group">
-          <input type="text" class="form-control" ng-model="newFo.farmName" placeholder="Farm Name">
+          <input type="text" class="form-control" ng-model="newFarmOwner.farmName" placeholder="Farm Name">
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model="newFo.typeOfAgric" placeholder="Agric Type">
+              <input type="text" class="form-control" ng-model="newFarmOwner.agricType" placeholder="Agric Type">
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="number" class="form-control" ng-model="newFo.numOfEmployees" placeholder="Number of Employees">
+              <input type="number" class="form-control" ng-model="newFarmOwner.numOfEmployees" placeholder="Number of Employees">
             </div>
           </div>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" ng-model="newFo.address" placeholder="Address">
+          <input type="text" class="form-control" ng-model="newFarmOwner.address" placeholder="Address">
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
-            <input list="states" class="form-control" ng-model="newFo.state" placeholder="State">
+            <input list="states" class="form-control" ng-model="newFarmOwner.state" placeholder="State">
             <datalist id="states">
               <option>Outside Nigeria</option>
               <option>Abia</option>
@@ -130,7 +133,7 @@
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" ng-model="newFo.website" placeholder="Website">
+              <input type="text" class="form-control" ng-model="newFarmOwner.website" placeholder="Website">
             </div>
           </div>
         </div>
@@ -143,12 +146,15 @@
     <!-- sign in -->
     <div class="fo-signup-block-right">
       <h4>Log In</h4>
+      <div class="alert alert-danger collapse" id="error2">
+        <strong>{{error2}}</strong>
+      </div>
       <form role="form">
         <div class="form-group">
-          <input type="email" class="form-control" ng-model="fo.email" placeholder="Email">
+          <input type="email" class="form-control" ng-model="farmOwner.email" placeholder="Email">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" ng-model="fo.password" placeholder="Password">
+          <input type="password" class="form-control" ng-model="farmOwner.password" placeholder="Password">
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
