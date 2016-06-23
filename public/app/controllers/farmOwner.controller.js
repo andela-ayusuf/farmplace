@@ -32,7 +32,6 @@ angular.module('farmplace')
         $location.url('/foDashboard');
       }, function(err) {
         $scope.error2 = err.data.message;
-        console.log('yyy', err.data.message)
         $('#error2').show();
       });
     };
