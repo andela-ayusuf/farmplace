@@ -32,7 +32,7 @@ exports.middleware = function(req, res, next) {
 
 // this method returns a single user
 exports.getUser = function(req, res) {
-  User.find({username: req.params.username})
+  User.findById(req.params.id)
   .then(function(user) {
     if (!user) {
       return res.status(401).send({
