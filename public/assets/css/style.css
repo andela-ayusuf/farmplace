@@ -502,3 +502,35 @@
 .fo-signup-block-left hr {
   margin-top: 5px;
 }
+
+/*Job Posting Page*/
+/*jb means job posting*/
+
+
+.jb-main-div {
+  width: 75%;
+  margin: 5px auto 0;
+  padding: 2em 0em;
+  padding-top: 100px;
+}
+.jb-block {
+  margin:0 auto;
+  width: 60%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 28px 25px 28px;
+  background:#FFFFFF;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+

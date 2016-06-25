@@ -37,6 +37,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       url: '/foDashboard',
       templateUrl: 'app/views/foDashboard.view.html',
       controller: 'FarmOwnerCtrl'
+    })
+    .state('postJob', {
+      url: '/postJob',
+      templateUrl: 'app/views/postJob.view.html',
+      controller: 'FarmOwnerCtrl'
     });
 
     $urlRouterProvider.otherwise('/');
@@ -46,15 +51,15 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       return {
         'request': function(config) {
           config.headers = config.headers || {};
-          if (localStorage.getItem('token')) {
-            config.headers['x-access-token'] = localStorage.getItem('token');
+          if (localStorage.getItem('token') || localStorage.getItem('foToken')) {
+            config.headers['x-access-token'] = localStorage.getItem('token') || localStorage.getItem('foToken');
             // $location.url('/dashboard');
           }
           return config;
         },
         'responseError': function(response) {
           if (response.status === 403) {
-            $location.url('/home');
+            // $location.url('/');
           }
           return $q.reject(response);
         }
