@@ -56,9 +56,7 @@ navbar -->
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
-          <input list="states" class="form-control" ng-model="user.address" placeholder="Current Location (State)">
-          <datalist id="states">
-            <option>Outside Nigeria</option>
+          <select class="form-control" ng-model="user.address">
             <option>Abia</option>
             <option>Adamawa</option>
             <option>Akwa Ibom</option>
@@ -96,11 +94,11 @@ navbar -->
             <option>Taraba</option>
             <option>Yobe</option>
             <option>Zamfara</option>
-          </datalist>
+          </select>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="form-group">
-            <input type="tel" class="form-control" ng-model="user.phoneno" placeholder="Phone Number">
+            <input type="tel" class="form-control" ng-model="user.phoneNo" placeholder="Phone Number">
           </div>
         </div>
       </div>
