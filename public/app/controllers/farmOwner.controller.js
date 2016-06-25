@@ -17,7 +17,7 @@ angular.module('farmplace')
       } 
       else {
         FarmOwnerService.farmOwnerSignup($scope.newFarmOwner).then(function(res) {
-          $scope.saveToLS(res.data.foId, res.data.foToken);
+          $scope.saveToLS(res.data.id, res.data.token);
           $location.url('/foDashboard');
         }, function(err) {
           $scope.error = err.data.message;
@@ -28,7 +28,7 @@ angular.module('farmplace')
 
     $scope.farmOwnerLogin = function() {
       FarmOwnerService.farmOwnerLogin($scope.farmOwner).then(function(res) {
-        $scope.saveToLS(res.data.foId, res.data.foToken);
+        $scope.saveToLS(res.data.id, res.data.token);
         $location.url('/foDashboard');
       }, function(err) {
         $scope.error2 = err.data.message;
@@ -36,4 +36,13 @@ angular.module('farmplace')
       });
     };
 
+    $scope.getFarmOwner = function() {
+      var id = localStorage.getItem('foId');
+      FarmOwnerService.getFarmOwner(id).then(function(res) {
+        $scope.farmOwner = res.data;
+      }, function(err) {
+      })
+    };
+
   }]);
+

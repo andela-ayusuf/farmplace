@@ -9,5 +9,9 @@ angular.module('farmplace')
       return $http.post(baseUrl + '/api/farmOwner/login', user);
     };
 
+    FarmOwner.getFarmOwner = function(id) {
+    	return $http.get(baseUrl + '/api/farmOwner/' + id);
+    };
+
 		return FarmOwner;
 	}]);
