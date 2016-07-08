@@ -20,7 +20,26 @@ angular.module('farmplace')
         $scope.job = res.data[0];
       }, function(err) {
       });
-    }
+    };
+
+    // this function allows a farm owner to post a job
+    $scope.postJob = function() {
+      var job = {
+        foId: localStorage.getItem('foId'),
+        agricType: $scope.job.agricType,
+        title: $scope.job.title,
+        location: $scope.job.location,
+        expiryDate: $scope.job.expiryDate,
+        description: $scope.job.description
+      };
+      JobService.postJob(job).then(function(res) {
+        $location.url('/foDashboard');
+      }, function(err) {
+        console.log(err)
+        $scope.error = err.data.message;
+        $('#error').show();
+      })
+    };
 
   }])
   

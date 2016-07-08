@@ -41,7 +41,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
     .state('postJob', {
       url: '/postJob',
       templateUrl: 'app/views/postJob.view.html',
-      controller: 'FarmOwnerCtrl'
+      controller: 'JobCtrl'
     });
 
     $urlRouterProvider.otherwise('/');
