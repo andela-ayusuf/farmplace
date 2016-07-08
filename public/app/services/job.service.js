@@ -10,7 +10,7 @@ angular.module('farmplace')
     	return $http.get(baseUrl + '/api/jobs/' + id);
     };
 
-		Job.getAllJobs = function(token) {
+		Job.getAllJobs = function() {
       return $http.get(baseUrl + '/api/jobs');
     };
 
