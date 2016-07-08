@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var FarmOwner = require('./farmOwner.model.js');
 var Schema = mongoose.Schema;
 
 var jobSchema = new Schema({
@@ -25,7 +26,7 @@ var jobSchema = new Schema({
 	agricType: {
 		type: String,
 		required: true,
-		enum: ['arable', 'livestock', 'mixed']
+		enum: ['Arable', 'Livestock', 'Mixed']
 	},
 	datePosted: {
 		type: Date,

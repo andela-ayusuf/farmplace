@@ -6,7 +6,7 @@ mongoose.Promise = require('bluebird');
 // this method allows a farm owner to post a job
 exports.postJob = function(req, res) {
   // verify farm owner
-  FarmOwner.findOne({email: req.decoded._doc.email})
+  FarmOwner.findById(req.body.foId)
   .then(function(farmOwner) {
     if (!farmOwner) {
       return res.status(403).send({
@@ -18,18 +18,6 @@ exports.postJob = function(req, res) {
       var farmOwnerId = farmOwner._id;
       var farmOwnerFarmName = farmOwner.farmName;
     }
-    var year = req.body.year;
-    var a = req.body.month;
-    var b = req.body.day;
-
-    var month = +a - 1;
-    var day = +b + 1;
-
-    function expire(year, month, day) {
-      var dates = new Date(year, month, day);
-      return dates;
-    }
-
     var job = new Job();
     job.ownerId = farmOwnerId;
     job.title = req.body.title;
@@ -37,7 +25,7 @@ exports.postJob = function(req, res) {
     job.farmName = farmOwnerFarmName;
     job.location = req.body.location;
     job.agricType = req.body.agricType;
-    job.expiryDate = expire(year, month, day);
+    job.expiryDate = req.body.expiryDate;
 
     // save/post a job
     job.save()
