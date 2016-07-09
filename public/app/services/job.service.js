@@ -14,5 +14,9 @@ angular.module('farmplace')
       return $http.get(baseUrl + '/api/jobs');
     };
 
+    Job.getFarmOwnerJobs = function() {
+      return $http.get(baseUrl + '/api/farmOwner/' + foId + '/jobs');
+    };
+
 		return Job;
 	}]);

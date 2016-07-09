@@ -38,7 +38,14 @@ angular.module('farmplace')
         console.log(err)
         $scope.error = err.data.message;
         $('#error').show();
-      })
+      });
+    };
+
+    $scope.getFarmOwnerJobs = function() {
+      JobService.getFarmOwnerJobs.then(function(res) {
+        $scope.jobs = res.data;
+      }, function(err) {
+      });
     };
 
   }])
