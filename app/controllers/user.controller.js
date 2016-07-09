@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 // this method authenticates user
-exports.middleware = function(req, res, next) {
+exports.middleware = function middleware(req, res, next) {
   var token = req.body.token ||
     req.query.token ||
     req.headers['x-access-token'];
@@ -31,7 +31,7 @@ exports.middleware = function(req, res, next) {
 };
 
 // this method returns a single user
-exports.getUser = function(req, res) {
+exports.getUser = function getUser(req, res) {
   User.findById(req.params.id)
   .then(function(user) {
     if (!user) {
@@ -54,7 +54,7 @@ exports.getUser = function(req, res) {
 };
 
 // this method allows user information to be edited
-exports.editUser = function(req, res) {
+exports.editUser = function editUser(req, res) {
   User.update({username: req.params.username}, req.body)
   .then(function(user) {
     return res.status(200).send({
@@ -72,7 +72,7 @@ exports.editUser = function(req, res) {
 };
 
 // this method deletes a user account
-exports.deleteUser = function(req, res) {
+exports.deleteUser = function deleteUser(req, res) {
   User.remove({username: req.params.username})
   .then(function(user) {
     return res.status(200).send({

@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 // this method creates a new user
-exports.userSignup = function(req, res) {
+exports.userSignup = function userSignup(req, res) {
   var user = new User();
   user.username = req.body.username;
   user.firstname = req.body.firstname;
@@ -52,7 +52,7 @@ exports.userSignup = function(req, res) {
 };
 
 // this method logs a user in
-exports.userLogin = function(req, res) {
+exports.userLogin = function userLogin(req, res) {
   User.findOne({username: req.body.username})
   .select('username password')
   .exec()
@@ -92,7 +92,7 @@ exports.userLogin = function(req, res) {
 };
 
 // this method creates a new farm owner
-exports.farmOwnerSignup = function(req, res) {
+exports.farmOwnerSignup = function farmOwnerSignup(req, res) {
   var farmOwner = new FarmOwner();
   farmOwner.firstname = req.body.firstname;
   farmOwner.lastname = req.body.lastname;
@@ -142,7 +142,7 @@ exports.farmOwnerSignup = function(req, res) {
 };
 
 // this method logs in a farm owner
-exports.farmOwnerLogin = function(req, res) {
+exports.farmOwnerLogin = function farmOwnerLogin(req, res) {
   FarmOwner.findOne({email: req.body.email})
   .select('email password firstname')
   .exec()
@@ -182,7 +182,7 @@ exports.farmOwnerLogin = function(req, res) {
 };
 
 // this method logs a user out
-exports.logout = function(req, res) {
+exports.logout = function logout(req, res) {
   req.session.destroy()
   .then(function(success) {
     return res.send({

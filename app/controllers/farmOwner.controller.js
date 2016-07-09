@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 // this method returns a farm owners account details
-exports.getFarmOwner = function(req, res) {
+exports.getFarmOwner = function getFarmOwner(req, res) {
   FarmOwner.findById(req.params.id)
   .then(function(farmOwner) {
     if (!farmOwner) {
@@ -26,7 +26,7 @@ exports.getFarmOwner = function(req, res) {
 };
 
 // this method allows a farm owners information to be edited
-exports.editFarmOwner = function(req, res) {
+exports.editFarmOwner = function editFarmOwner(req, res) {
   FarmOwner.findByIdAndUpdate(req.params.id, req.body)
   .then(function(farmOwner) {
     return res.status(200).send({
@@ -44,7 +44,7 @@ exports.editFarmOwner = function(req, res) {
 };
 
 // this method deletes a farm owners account
-exports.deleteFarmOwner = function(req, res) {
+exports.deleteFarmOwner = function deleteFarmOwner(req, res) {
   FarmOwner.findById(req.params.id).remove()
   .then(function(farmOwner) {
     return res.status(200).send({
