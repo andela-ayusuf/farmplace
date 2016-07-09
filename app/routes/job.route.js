@@ -10,6 +10,9 @@ function jobRoutes(router) {
     .get(jobCtrl.getJob)
     .put(jobCtrl.editJob)
     .delete(jobCtrl.deleteJob);
+
+   router.route('/farmOwner/:id/jobs')
+    .get(jobCtrl.getFarmOwnerJobs);
 }
 
 module.exports = jobRoutes;

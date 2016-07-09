@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 // this method allows a farm owner to post a job
-exports.postJob = function(req, res) {
+exports.postJob = function postJob(req, res) {
   // verify farm owner
   FarmOwner.findById(req.body.foId)
   .then(function(farmOwner) {
@@ -62,9 +62,8 @@ exports.postJob = function(req, res) {
 };
 
 // this method returns all jobs in the db
-exports.getAllJobs = function(req, res) {
+exports.getAllJobs = function getAllJobs(req, res) {
 	Job.find({})
-  .exec()
   .then(function(jobs) {
     if (!jobs) {
       return res.status(401).send({
@@ -85,7 +84,7 @@ exports.getAllJobs = function(req, res) {
   });
 };
 
-exports.getJob = function(req, res) {
+exports.getJob = function getJob(req, res) {
 	Job.find({_id: req.params.id})
   .then(function(job) {
     if (!job) {
@@ -107,7 +106,28 @@ exports.getJob = function(req, res) {
   });
 };
 
-exports.editJob = function(req, res) {
+exports.getFarmOwnerJobs = function getFarmOwnerJobs(req, res) {
+  Job.find({ownerId: req.params.id})
+  .then(function(jobs) {
+    if (jobs == []) {
+      return res.status(200).send({
+        success: true,
+        message: 'You havent posted any jobs yet.'
+      });
+    }
+    else {
+      return res.status(200).send(jobs);
+    }
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.'
+    });
+  });
+};
+
+exports.editJob = function editJob(req, res) {
 	Job.findByIdAndUpdate(req.params.id, req.body)
   .then(function(job) {
     return res.status(200).send({
@@ -124,7 +144,7 @@ exports.editJob = function(req, res) {
   });
 };
 
-exports.deleteJob = function(req, res) {
+exports.deleteJob = function deleteJob(req, res) {
 	Job.findById(req.params.id)
   .remove()
   .then(function(job) {
