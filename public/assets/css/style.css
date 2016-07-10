@@ -373,15 +373,28 @@
   margin-top: 2px;
 }
 .jobs {
+  width: 35%;
+  margin: 0 auto;
+}
+.jobs .panel {
+  border: 0;
+}
+.jobs .panel-heading {
+  border-bottom: 0;
+}
+.jobs .panel-heading h4 {
+  text-align: center;
+}
+.jobs-main-div {
   padding-top: 100px;
 }
-.search-details-left {
+.job-list-left {
   float: left;
 }
-.search-details-right {
+.job-list-right {
   float: right;
 }
-.search-details-down {
+.job-list-down {
   margin-top: 13px;
 }
 .job-title {
