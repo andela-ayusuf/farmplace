@@ -2,20 +2,20 @@ angular.module('farmplace')
   .controller('JobCtrl', ['$scope', 'JobService', '$location', '$window', function($scope, JobService, $location, $window) {
 
     $scope.getAllJobs = function() {
-      JobService.getAllJobs(sessionStorage.token).then(function(res) {
+      JobService.getAllJobs().then(function(res) {
         $scope.jobs = res.data;
       }, function(err) {
       });
     };
 
     $scope.getJobId = function() {
-      var id = $window.sessionStorage.id;
-      return id;
+      var jId = localStorage.getItem('jId'); //jId means job id
+      return jId;
     };
 
-    $scope.getJob = function(id) {
-      $window.sessionStorage.id = id;
-      JobService.getJob(id).then(function(res) {
+    $scope.getJob = function(jId) {
+      localStorage.setItem('jId', jId);
+      JobService.getJob(jId).then(function(res) {
         $location.url('/job-details');
         $scope.job = res.data[0];
       }, function(err) {
@@ -35,14 +35,18 @@ angular.module('farmplace')
       JobService.postJob(job).then(function(res) {
         $location.url('/foDashboard');
       }, function(err) {
-        console.log(err)
         $scope.error = err.data.message;
         $('#error').show();
       });
     };
 
     $scope.getFarmOwnerJobs = function() {
-      JobService.getFarmOwnerJobs.then(function(res) {
+      var foId = localStorage.getItem('foId');
+      JobService.getFarmOwnerJobs(foId).then(function(res) {
+        var noJobs;
+        if (res.data.length === 0) {
+          $scope.noJobs = true;
+        }
         $scope.jobs = res.data;
       }, function(err) {
       });
