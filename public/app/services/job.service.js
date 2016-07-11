@@ -6,15 +6,15 @@ angular.module('farmplace')
       return $http.post(baseUrl + '/api/jobs', job);
     };
 
-    Job.getJob = function(id) {
-    	return $http.get(baseUrl + '/api/jobs/' + id);
+    Job.getJob = function(jId) {
+    	return $http.get(baseUrl + '/api/jobs/' + jId);
     };
 
 		Job.getAllJobs = function() {
       return $http.get(baseUrl + '/api/jobs');
     };
 
-    Job.getFarmOwnerJobs = function() {
+    Job.getFarmOwnerJobs = function(foId) {
       return $http.get(baseUrl + '/api/farmOwner/' + foId + '/jobs');
     };
 
