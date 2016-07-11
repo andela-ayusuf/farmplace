@@ -529,18 +529,28 @@
 
 /*Farm Owner Dashboard Page*/
 
-.foDb-main-div {
+.foDb-main-div1, .foDb-main-div2 {
   margin-top: 100px;
   width: 100%;
+}
+.foDb-main-div1 {
   text-align: center;
 }
-.foDb-main-div a {
+.foDb-main-div1 .btn {
   margin-top: 15px;
   background-color: #008000;
   color: #fff;
 }
-.foDb-main-div a:hover{
+.foDb-main-div1 .btn:hover{
   background: #28a328;
+  color: #fff;
+}
+.foDb-main-div2 span {
+  float: right;
+}
+.foDb-main-div2 .btn {
+  margin-bottom: 15px;
+  background-color: #008000;
   color: #fff;
 }
 

@@ -1,7 +1,27 @@
 <!-- nav bar -->
 <ng-include src="'app/views/foNavbar.view.html'"></ng-include>
 
-<div class="foDb-main-div">
-  <h2>You currently have no jobs posted. Click the button below to post a job.</h2>
-  <a href="/postJob" class="btn">Post A Job</a>
+<!-- this div shows when the farm owner hasnt posted a job yet -->
+<div class="foDb-main-div1" ng-controller="JobCtrl" data-ng-init="getFarmOwnerJobs()">
+  <div ng-if="noJobs">
+    <h2>You currently have no jobs posted. Click the button below to post a job.</h2>
+    <a href="/postJob" class="btn">Post A Job</a>
+  </div>
+</div>
+
+<!-- this div shows when the farm owner hasnt posted a job yet -->
+<div class="foDb-main-div2" ng-controller="JobCtrl" data-ng-init="getFarmOwnerJobs()">
+  <div class="jobs" ng-if="!noJobs">
+    <a href="/postJob" class="btn">Post Another Job</a>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Jobs You Have Posted</h4>
+      </div>
+      <div class="list-group" >
+				<a href="#" class="list-group-item" ng-repeat="job in jobs">
+				  <h5 class="list-group-item-text text-capitalize">{{job.title}} <span>{{job.datePosted | calendar}}</span></h5>
+				</a>
+      </div>
+    </div>
+  </div>
 </div>
