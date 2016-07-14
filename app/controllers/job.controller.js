@@ -1,5 +1,6 @@
 var Job = require('../models/job.model');
 var FarmOwner = require('../models/farmOwner.model');
+var User = require('../models/user.model');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
@@ -106,10 +107,31 @@ exports.getJob = function getJob(req, res) {
   });
 };
 
+// this method allows a user to apply for an internship
+exports.apply = function apply(req, res) {
+  User.update({_id: req.body.applicants}, {$push: {jobsAppliedFor: req.body.jobsAppliedFor}})
+  .then(function(user) {
+    Job.update({_id: req.body.jobsAppliedFor}, {$push: {applicants: req.body.applicants}})
+    .then(function(job) {
+      return res.status(200).send({
+        success: true,
+        message: 'Application Successful.'
+      });
+    })
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
+  });
+};
+
 exports.getFarmOwnerJobs = function getFarmOwnerJobs(req, res) {
   Job.find({ownerId: req.params.id})
   .then(function(jobs) {
-    if (jobs == []) {
+    if (jobs.length === 0) {
       return res.status(200).send({
         success: true,
         message: 'You havent posted any jobs yet.'

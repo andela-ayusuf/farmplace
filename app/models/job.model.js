@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-var FarmOwner = require('./farmOwner.model.js');
+var FarmOwner = require('./farmOwner.model');
+var User = require('./user.model');
 var Schema = mongoose.Schema;
 
 var jobSchema = new Schema({
@@ -7,6 +8,10 @@ var jobSchema = new Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'FarmOwner'
 	},
+	applicants: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'User'
+	}],
 	title: {
 		type: String,
 		required: true
