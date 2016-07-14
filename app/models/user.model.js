@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
+var Job = require('./job.model');
 
 var userSchema = new Schema({
 	username: {
@@ -38,7 +39,11 @@ var userSchema = new Schema({
 	address: {
 		type: String,
 		required: true
-	}
+	},
+	jobsAppliedFor: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Job'
+	}]
 });
 
 userSchema.pre('save', function(next) {
