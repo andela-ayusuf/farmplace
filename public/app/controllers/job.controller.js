@@ -51,6 +51,12 @@ angular.module('farmplace')
       }, function(err) {
       });
     };
+    $scope.apply = function(application) {
+      JobService.apply(application).then(function(res) {
+        $location.url('/dashboard');
+      }, function(err) {
+      });
+    };
 
   }])
   
