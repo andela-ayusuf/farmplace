@@ -42,6 +42,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       url: '/postJob',
       templateUrl: 'app/views/postJob.view.html',
       controller: 'JobCtrl'
+    })
+    .state('apply', {
+      url: '/apply',
+      templateUrl: 'app/views/apply.view.html',
+      controller: 'JobCtrl'
     });
 
     $urlRouterProvider.otherwise('/');
