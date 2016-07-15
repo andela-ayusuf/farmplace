@@ -16,7 +16,7 @@ angular.module('farmplace')
     $scope.getJob = function(jId) {
       localStorage.setItem('jId', jId);
       JobService.getJob(jId).then(function(res) {
-        $location.url('/job-details');
+        $location.url('/intDetails');
         $scope.job = res.data[0];
       }, function(err) {
       });
