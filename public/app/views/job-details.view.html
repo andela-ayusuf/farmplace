@@ -1,40 +1,35 @@
 <!-- nav bar -->
 <ng-include src="'app/views/navbar.view.html'"></ng-include>
-<!--header strat here-->
+
 <div class="mother-grid" ng-controller="JobCtrl" data-ng-init="getJob(getJobId())">
   <h2 class="text-capitalize">{{job.title}}</h2>
   <h4 class="text-capitalize">{{job.farmName}}</h4>
-  <div class="block">
-    <div class="block-left">
+  <div class="block-left">
+    <div class="meta">
+      <ul class="meta-left">
+        <li class="farm-type">
+          <p class="text-capitalize"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> {{job.agricType}} Farming</p>
+        </li>
+        <li class="location">
+          <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location}}</p>
+        </li>
+        <li class="date">
+          <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
+        </li>
+      </ul>
+      <a type="submit" href="/apply" class="btn meta-right">Apply</a>
+    </div>
+    <div class="content">
       <h3>Description</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.</p>
-      <div class="jobdet-comments">
-        <div class="jobdet-left">
-          <ul>
-            <li class="farm-type">
-              <p class="text-capitalize"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> {{job.agricType}} Farming</p>
-            </li>
-            <li class="location">
-              <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location}}</p>
-            </li>
-            <li class="date">
-              <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
-            </li>
-          </ul>
-        </div>
-        <div class="jobdet-right">
-          <button type="submit" class="btn nav-button signup">Apply</button>
-        </div>
-        <div class="clearfix"></div>
-      </div>
     </div>
-    <div class="block-right">
-      <h3>Featured Internships</h3>
-      <div class="list-group">
-        <a href="" class="list-group-item">Modal Farms</a>
-        <a href="" class="list-group-item">Blog Farms</a>
-        <a href="" class="list-group-item">Data Farms</a>
-      </div>
+  </div>
+
+  <div class="block-right">
+    <div class="list-group">
+      <a href="" class="list-group-item">Modal Farms</a>
+      <a href="" class="list-group-item">Blog Farms</a>
+      <a href="" class="list-group-item">Data Farms</a>
     </div>
   </div>
 </div>
