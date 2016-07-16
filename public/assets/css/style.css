@@ -1,5 +1,18 @@
 /*LANDING PAGE*/
 /*navbar*/
+.mbc {
+  background-color: #008000;
+  color: #fff;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-color: #fff;
+}
+.mbc:hover {
+  background: #28a328;
+  color: #fff;
+}
 .navbar{
   margin-bottom: 0px;
 }
@@ -39,46 +52,33 @@
 .lastlink {
   padding-right: 16px;
 }
-.nav-button {
+.signup {
   margin-top: 2px;
   border: medium none;
-  border-radius: 4px;
+}
+.login {
+  margin: 2px 5px 0 5px;
+  padding: 5px 15px;
+  background-color: #fff;
+  color: #506A85;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.nav-button.signup{
-  background-color: #008000;
+.login:hover{
+  background-color: #28a328;
   color: #fff;
-  margin-right: 5px;
-}
-.nav-button.login{
-  background-color: #fff;
-  color: #506A85;
-}
-.nav-button:hover{
-  background: #28a328;
-  color: #fff;
-}
-#login {
-  padding-right: 5px;
 }
 .navbar-right .dropdown-menu .form-control {
   width: 90%;
   margin: auto;
   margin-top: 7px;
 }
-.navbar-right .dropdown-menu .login {
+.navbar-right .dropdown-menu .btn {
   margin-top: -5px;
-  background-color: #008000;
   border: medium none;
-  color: #fff;
   padding: 5px 15px;
-  border-radius: 4px;
-}
-.navbar-right .dropdown-menu .login:hover {
-  background-color: #28a328;
 }
 
 /*slider*/
@@ -137,22 +137,12 @@
   width: 195px;
 }
 .form-inline button{
-  background-color: #008000;
   border: medium none;
-  color: #fff;
   height: 40px;
   width: 90px;
   font-size: 16px;
   padding: 5px 15px;
   border-radius: 4px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-.form-inline button:hover{
-  background-color: #28a328;
-  color: #fff;
 }
 
 /*about*/
@@ -247,22 +237,10 @@
   margin-top: 16px;
 }
 .wantto-section button {
-  background-color: #008000;
   border: medium none;
-  color: #fff;
-  height: 32px;
-  width: 75px;
   font-size: 16px;
   padding: 5px 15px;
   border-radius: 4px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-.wantto-section button:hover{
-  background: #28a328;
-  color: #fff;
 }
 
 /*footer*/
@@ -333,18 +311,9 @@
   margin-top: 7px;
 }
 #signupin-but {
-  background-color: #008000;
   border: medium none;
-  color: #fff;
   padding: 5px 15px;
   border-radius: 5px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-#signupin-but:hover {
-  background-color: #28a328;
 }
 .login-main-div {
   width: 50%;
@@ -446,13 +415,7 @@
   float: right;
   display: inline;
   margin-top: -55px;
-  background-color: #008000;
-  color: #fff;
   padding: 5px 20px;
-}
-.meta-right:hover{
-  background: #28a328;
-  color: #fff;
 }
 .meta-left {
   padding: 0px;
@@ -535,19 +498,11 @@
 }
 .foDb-main-div1 .btn {
   margin-top: 15px;
-  background-color: #008000;
-  color: #fff;
-}
-.foDb-main-div1 .btn:hover{
-  background: #28a328;
-  color: #fff;
 }
 .foDb-main-div2 span {
   float: right;
 }
 .foDb-main-div2 .btn {
   margin-bottom: 15px;
-  background-color: #008000;
-  color: #fff;
 }
 

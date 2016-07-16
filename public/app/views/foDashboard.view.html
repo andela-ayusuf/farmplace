@@ -5,14 +5,14 @@
 <div class="foDb-main-div1" ng-controller="JobCtrl" data-ng-init="getFarmOwnerJobs()">
   <div ng-if="noJobs">
     <h2>You currently have no jobs posted. Click the button below to post a job.</h2>
-    <a href="/postJob" class="btn">Post A Job</a>
+    <a href="/postJob" class="btn mbc">Post A Job</a>
   </div>
 </div>
 
 <!-- this div shows when the farm owner hasnt posted a job yet -->
 <div class="foDb-main-div2" ng-controller="JobCtrl" data-ng-init="getFarmOwnerJobs()">
   <div class="jobs" ng-if="!noJobs">
-    <a href="/postJob" class="btn">Post Another Job</a>
+    <a href="/postJob" class="btn mbc">Post Another Job</a>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4>Jobs You Have Posted</h4>
