@@ -39,11 +39,7 @@ var userSchema = new Schema({
 	address: {
 		type: String,
 		required: true
-	},
-	jobsAppliedFor: [{
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Job'
-	}]
+	}
 });
 
 userSchema.pre('save', function(next) {

@@ -8,10 +8,6 @@ var jobSchema = new Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'FarmOwner'
 	},
-	applicants: [{
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'User'
-	}],
 	title: {
 		type: String,
 		required: true
