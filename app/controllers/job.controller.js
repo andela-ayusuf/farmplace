@@ -1,6 +1,7 @@
 var Job = require('../models/job.model');
 var FarmOwner = require('../models/farmOwner.model');
 var User = require('../models/user.model');
+var Application = require('../models/application.model');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
@@ -109,15 +110,38 @@ exports.getJob = function getJob(req, res) {
 
 // this method allows a user to apply for an internship
 exports.apply = function apply(req, res) {
-  User.update({_id: req.body.applicants}, {$push: {jobsAppliedFor: req.body.jobsAppliedFor}})
-  .then(function(user) {
-    Job.update({_id: req.body.jobsAppliedFor}, {$push: {applicants: req.body.applicants}})
-    .then(function(job) {
+  var application = new Application();
+  application.ownerId = req.body.id;
+  application.jobId = req.body.jId;
+  application.details = req.body.details;
+
+  application.save().then(function(application) {
+    return res.status(200).send({
+      success: true,
+      message: 'Application Successful.'
+    });
+  })
+  .catch(function(err) {
+    return res.status(403).send({
+      success: false,
+      message: 'An error occured.',
+      error: err
+    });
+  });
+};
+
+exports.getApplicants = function getApplicants(req, res) {
+  Application.find({jobId: req.params.id})
+  .then(function(applicants) {
+    if (applicants.length === 0) {
       return res.status(200).send({
-        success: true,
-        message: 'Application Successful.'
+        success: false,
+        message: 'There are no applicants for this job.'
       });
-    })
+    }
+    else {
+      return res.status(200).send(applicants);
+    }
   })
   .catch(function(err) {
     return res.status(403).send({
