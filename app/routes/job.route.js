@@ -4,8 +4,13 @@ var userCtrl = require('../controllers/user.controller');
 function jobRoutes(router) {
 	router.route('/jobs')
 		.post(jobCtrl.postJob)
-		.get(jobCtrl.getAllJobs)
-		.put(jobCtrl.apply);
+		.get(jobCtrl.getAllJobs);
+
+	router.route('/apply')
+		.post(jobCtrl.apply);
+
+	router.route('/applicants/:id')
+		.get(jobCtrl.getApplicants);
 
 	 router.route('/jobs/:id')
     .get(jobCtrl.getJob)
