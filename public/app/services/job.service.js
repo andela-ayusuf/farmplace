@@ -11,7 +11,7 @@ angular.module('farmplace')
     };
 
     Job.apply = function(application) {
-      return $http.put(baseUrl + '/api/jobs', application);
+      return $http.post(baseUrl + '/api/apply', application);
     };
 
     Job.getJob = function(jId) {

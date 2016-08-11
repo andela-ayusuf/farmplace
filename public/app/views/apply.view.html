@@ -1,2 +1,21 @@
 <!-- nav bar -->
 <ng-include src="'app/views/navbar.view.html'"></ng-include>
+
+<div class="apply-main-div">
+  <div class="apply-block">
+    <h4>Why are you applying for this Internship Position</h4>
+    <div class="alert alert-danger collapse" id="error">
+      <strong>{{error}}</strong>
+    </div>
+    <form role="form">
+      <div class="form-group">
+        <textarea class="form-control" rows="8" ng-model="application.details" placeholder=""></textarea>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <a href="#" id="signupin-but" ng-click="apply()" class="btn btn-default mbc btn-block">Apply</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

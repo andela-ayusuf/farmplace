@@ -51,11 +51,25 @@ angular.module('farmplace')
       }, function(err) {
       });
     };
-    $scope.apply = function(application) {
-      JobService.apply(application).then(function(res) {
-        $location.url('/dashboard');
-      }, function(err) {
-      });
+
+    $scope.apply = function() {
+      if ($scope.application === undefined) {
+        $scope.error = 'Common, tell us why you want this internship position!';
+        $('#error').show();
+      }
+      else {
+        var application = {
+          id: localStorage.getItem('id'),
+          jId: localStorage.getItem('jId'),
+          details: $scope.application.details
+        };
+        JobService.apply(application).then(function(res) {
+          $location.url('/dashboard');
+        }, function(err) {
+          $scope.error = err.data.message;
+          $('#error').show();
+        });
+      }
     };
 
   }])
