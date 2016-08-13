@@ -111,7 +111,7 @@ exports.getJob = function getJob(req, res) {
 // this method allows a user to apply for an internship
 exports.apply = function apply(req, res) {
   var application = new Application();
-  application.ownerId = req.body.id;
+  application.applicantId = req.body.id;
   application.jobId = req.body.jId;
   application.details = req.body.details;
 
@@ -132,6 +132,7 @@ exports.apply = function apply(req, res) {
 
 exports.getApplicants = function getApplicants(req, res) {
   Application.find({jobId: req.params.id})
+  .populate('applicantId')
   .then(function(applicants) {
     if (applicants.length === 0) {
       return res.status(200).send({

@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken');
 var User = require('../models/user.model');
 var FarmOwner = require('../models/farmOwner.model');
 var config = require('../../config/config');
+var mailer = require('./mailer.controller');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
@@ -27,6 +28,7 @@ exports.userSignup = function userSignup(req, res) {
       message: 'Welcome ' + user.username,
       id: user._id
     });
+    mailer.welcomeMail(user.email);
   })
   .catch(function(err) {
     if (err.name === 'ValidationError') {
