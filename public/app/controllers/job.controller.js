@@ -22,6 +22,15 @@ angular.module('farmplace')
       });
     };
 
+    $scope.foGetJob = function(jId) {
+      localStorage.setItem('jId', jId);
+      JobService.getJob(jId).then(function(res) {
+        $location.url('/foIntDetails');
+        $scope.job = res.data[0];
+      }, function(err) {
+      });
+    };
+
     // this function allows a farm owner to post a job
     $scope.postJob = function() {
       var job = {
@@ -70,6 +79,18 @@ angular.module('farmplace')
           $('#error').show();
         });
       }
+    };
+
+    $scope.getApplicants = function() {
+      var jId = localStorage.getItem('jId');
+      JobService.getApplicants(jId).then(function(res) {
+        var noApps;
+        if (res.data.message === 'There are no applicants for this job.') {
+          $scope.noApps = true;
+        }
+        $scope.applicants = res.data;
+      }, function(err) {
+      })
     };
 
   }])

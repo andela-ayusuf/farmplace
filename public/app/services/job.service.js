@@ -14,6 +14,10 @@ angular.module('farmplace')
       return $http.post(baseUrl + '/api/apply', application);
     };
 
+    Job.getApplicants = function(jId) {
+      return $http.get(baseUrl + '/api/applicants/' + jId);
+    };
+
     Job.getJob = function(jId) {
     	return $http.get(baseUrl + '/api/jobs/' + jId);
     };
