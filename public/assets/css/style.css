@@ -392,20 +392,21 @@
 }
 .block-left {
   float: left;
-  width: 68%;
+  width: 64%;
 }
 .block-left h3 {
   font-size: 18px;
 }
 .block-right {
   float: right;
-  width: 30%;
+  width: 34%;
   padding: 10px;
   background:#FFFFFF;
 }
 .block-left p {
   font-size: 15px;
   line-height: 30px;
+  text-align: justify;
 }
 .meta {
   margin-top: 2em;
