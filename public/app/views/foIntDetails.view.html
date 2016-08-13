@@ -1,0 +1,48 @@
+<!-- nav bar -->
+<ng-include src="'app/views/foNavbar.view.html'"></ng-include>
+
+<div class="mother-grid" ng-controller="JobCtrl" data-ng-init="foGetJob(getJobId())">
+  <h2 class="text-capitalize">{{job.title}}</h2>
+  <h4 class="text-capitalize">{{job.farmName}}</h4>
+  <div class="block-left">
+    <div class="meta">
+      <ul class="meta-left">
+        <li class="farm-type">
+          <p class="text-capitalize"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> {{job.agricType}} Farming</p>
+        </li>
+        <li class="location">
+          <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{job.location}}</p>
+        </li>
+        <li class="date">
+          <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{job.datePosted | calendar}}</p>
+        </li>
+      </ul>
+      <a type="" href="" class="btn meta-right mbc">Edit</a>
+    </div>
+    <div class="content">
+      <h3>Description</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.</p>
+    </div>
+  </div>
+
+  <div class="block-right" data-ng-init="getApplicants()">
+
+		<div class="panel panel-default" ng-if="!noApps">
+		  <div class="panel-heading">
+		    <h5>Applicants</h5>
+		  </div>
+			<div class="list-group" ng-repeat="applicant in applicants">
+			  <a href="/appDetails" class="list-group-item">
+			    <h5 class="list-group-item-heading text-capitalize"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{applicant.applicantId.firstname}} {{applicant.applicantId.lastname}} <span style="float: right;"> <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{applicant.applicantId.address}}</span></h5>
+			    <p class="list-group-item-text" style="text-align: justify;"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> {{applicant.details.substring(0, 60)}}...</p>
+			  </a>
+			</div>
+		</div>
+
+		<div class="list-group" ng-if="noApps">
+      <p style="text-align: justify;" class="list-group-item">There are currently no applicants for this Internship.</p>
+    </div>
+
+  </div>
+</div>
+

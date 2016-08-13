@@ -43,9 +43,14 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       templateUrl: 'app/views/postJob.view.html',
       controller: 'JobCtrl'
     })
-    .state('foJobDetails', {
-      url: '/foJobDetails',
-      templateUrl: 'app/views/foJobDetails.view.html',
+    .state('foIntDetails', {
+      url: '/foIntDetails',
+      templateUrl: 'app/views/foIntDetails.view.html',
+      controller: 'JobCtrl'
+    })
+    .state('appDetails', {
+      url: '/appDetails',
+      templateUrl: 'app/views/appDetails.view.html',
       controller: 'JobCtrl'
     })
     .state('apply', {
