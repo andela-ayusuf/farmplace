@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<!-- this div shows when the farm owner hasnt posted a job yet -->
+<!-- this div shows when the farm owner has posted a job -->
 <div class="foDb-main-div2" ng-controller="JobCtrl" data-ng-init="getFarmOwnerJobs()">
   <div class="jobs" ng-if="!noJobs">
     <a href="/postJob" class="btn mbc">Post Another Job</a>
@@ -17,8 +17,8 @@
       <div class="panel-heading">
         <h4>Jobs You Have Posted</h4>
       </div>
-      <div class="list-group" >
-				<a href="/foJobDetails" class="list-group-item" ng-repeat="job in jobs">
+      <div class="list-group">
+				<a href="#" class="list-group-item" ng-click="foGetJob(job._id)" ng-repeat="job in jobs | orderBy:'datePosted':true">
 				  <h5 class="list-group-item-text text-capitalize">{{job.title}} <span>{{job.datePosted | calendar}}</span></h5>
 				</a>
       </div>

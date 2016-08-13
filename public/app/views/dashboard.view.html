@@ -9,7 +9,7 @@
         <h4>Jobs</h4>
       </div>
       <div class="list-group">
-        <div class="list-group-item" ng-repeat="job in jobs">
+        <div class="list-group-item" ng-repeat="job in jobs | orderBy:'datePosted':true">
           <div class="job-list-top clearfix">
             <div class="job-list-left">
               <p class="job-title text-capitalize"><a ng-click="getJob(job._id)" href="#">{{job.title}}</a></p>
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="text-center">
+      <!--   <div class="text-center">
           <ul class="pagination">
             <li>
               <a href="#" aria-label="Previous">
@@ -46,7 +46,7 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
