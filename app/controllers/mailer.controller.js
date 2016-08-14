@@ -14,7 +14,18 @@ exports.welcomeMail = function welcomeMail(userEmail) {
 	transporter.sendMail({
 		from: config.emailUsername + '@gmail.com',
 		to: userEmail,
-		subject: 'hello',
-		html: '<b>hello world!</b>'
+		subject: 'Welcome To Farmplace',
+		html: '<p>Thank you for signing up for Farm Place!</p>'
+	});
+};
+
+exports.beginPasswordResetMail = function beginPasswordResetMail(userEmail) {
+	transporter.sendMail({
+		from: config.emailUsername + '@gmail.com',
+		to: userEmail,
+		subject: 'Reset Your Farm Place Password',
+		html: '<p>We received a request to reset the password for your account on Farm Place.<p/> \n\
+			If you made this request, please click the link below.<p/> \n\
+			If you did not make this request, please ignore this email.<p/>'
 	});
 };
