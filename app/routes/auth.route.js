@@ -17,6 +17,11 @@ function authRoutes(router) {
 
   router.route('/logout')
     .post(authCtrl.logout);
+
+  // mailer routes
+  router.route('/password_reset')
+    .post(authCtrl.beginPasswordReset)
+    .put(authCtrl.passwordReset);
 }
 
 module.exports = authRoutes;
