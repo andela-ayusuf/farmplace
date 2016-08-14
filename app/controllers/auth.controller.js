@@ -22,13 +22,13 @@ exports.userSignup = function userSignup(req, res) {
     var token = jwt.sign(user, config.secret, {
       expiresIn: 1440
     });
-    res.status(200).send({
+    mailer.welcomeMail(user.email);
+    return res.status(200).send({
       success: true,
       token: token,
       message: 'Welcome ' + user.username,
       id: user._id
     });
-    mailer.welcomeMail(user.email);
   })
   .catch(function(err) {
     if (err.name === 'ValidationError') {
@@ -113,6 +113,7 @@ exports.farmOwnerSignup = function farmOwnerSignup(req, res) {
     var token = jwt.sign(farmOwner, config.secret, {
       expiresIn: 1440
     });
+    mailer.welcomeMail(farmOwner.email);
     return res.status(200).send({
       success: true,
       token: token,
@@ -181,6 +182,129 @@ exports.farmOwnerLogin = function farmOwnerLogin(req, res) {
       error: err
     });
   });
+};
+
+exports.beginPasswordReset = function beginPasswordReset(req, res) {
+  if (!req.body.email) {
+    return res.status(401).send({
+      success: true,
+      message: 'Please enter your email address.'
+    });
+  }
+  else {
+    var email = req.body.email;
+    var resMessage = 'We have sent an email to ' + email + ' Click the link in \n\
+      the email to reset your password. If you do not see the email, check \n\
+      other places it might be, like your junk, spam, social, or other folders.'
+
+    User.findOne({email: email})
+    .then(function(user) {
+      if (!user) {
+        FarmOwner.findOne({email: email})
+        .then(function(farmOwner) {
+          if (!farmOwner) {
+            return res.status(401).send({
+              success: false,
+              message: 'There is no account with that email. Please signup.'
+            })
+          }
+          else {
+            mailer.beginPasswordResetMail(email);
+            return res.status(200).send({
+              success: true,
+              message: resMessage
+            })
+          }
+        })
+        .catch(function(err) {
+          return res.status(403).send({
+            success: false,
+            message: 'An error occured.',
+            error: err
+          });
+        });
+      }
+      else {
+        mailer.beginPasswordResetMail(email);
+        return res.status(200).send({
+          success: true,
+          message: resMessage
+        })
+      }
+    })
+    .catch(function(err) {
+      return res.status(403).send({
+        success: false,
+        message: 'An error occured.',
+        error: err
+      });
+    });
+  }
+};
+
+exports.passwordReset = function passwordReset(req, res) {
+  if (!req.body.email || !req.body.password) {
+    return res.status(401).send({
+      success: true,
+      message: 'Please enter your email and password.'
+    });
+  }
+  else {
+    var email = req.body.email;
+    User.findOne({email: email})
+    .then(function(user) {
+      if (!user) {
+        FarmOwner.findOne({email: email})
+        .then(function(farmOwner) {
+          if (!farmOwner) {
+            return res.status(401).send({
+              success: false,
+              message: 'There is no account with that email. Please signup.'
+            })
+          }
+          else {
+            FarmOwner.update({email: email}, {$set: {password: req.body.password}})
+            .then(function(farmOwner) {
+              return res.status(200).send({
+                success: true,
+                message: 'Password reset successful.'
+              });
+            })
+            .catch(function(err) {
+              return res.status(403).send({
+                success: false,
+                message: 'An error occured.',
+                error: err
+              });
+            });
+          }
+        })
+      }
+      else {
+        User.update({email: email}, {$set: {password: req.body.password}})
+        .then(function(user) {
+          return res.status(200).send({
+            success: true,
+            message: 'Password reset successful.'
+          });
+        })
+        .catch(function(err) {
+          return res.status(403).send({
+            success: false,
+            message: 'An error occured.',
+            error: err
+          });
+        });
+      }
+    })
+    .catch(function(err) {
+      return res.status(403).send({
+        success: false,
+        message: 'An error occured.',
+        error: err
+      });
+    });
+  }
 };
 
 // this method logs a user out
