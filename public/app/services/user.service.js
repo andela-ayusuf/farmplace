@@ -19,5 +19,9 @@ angular.module('farmplace')
     	return $http.get(baseUrl + '/api/user/' + id);
     };
 
+    User.forgotPassword = function(email) {
+    	return $http.post(baseUrl + '/api/forgotPassword', email);
+    };
+
 		return User;
 	}]);

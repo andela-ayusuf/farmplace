@@ -46,6 +46,17 @@ angular.module('farmplace')
       })
     };
 
+    $scope.forgotPassword = function() {
+      UserService.forgotPassword($scope.user).then(function(res) {
+        $scope.user = null;
+        $scope.success = res.data.message;
+        $('#success').show();
+      }, function(err) {
+        $scope.error = err.data.message;
+        $('#error').show();
+      });
+    };
+
 
     $(window).load(function() { // makes sure the whole site is loaded
       $('#status').fadeOut(); // will first fade out the loading animation
