@@ -524,4 +524,19 @@
   margin-bottom: 20px;
 }
 
+/*Recovery Pages*/
+
+.recovery-main-div {
+  margin-top: 150px;
+  width: 100%;
+}
+.recovery-block {
+  margin:0 auto;
+  width: 25%;
+  text-align: center;
+}
+.recovery-block form {
+  margin-top: 20px;
+}
+
 

@@ -53,6 +53,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       templateUrl: 'app/views/appDetails.view.html',
       controller: 'JobCtrl'
     })
+    .state('forgotPassword', {
+      url: '/forgotPassword',
+      templateUrl: 'app/views/forgotPassword.view.html',
+      controller: 'UserCtrl'
+    })
     .state('apply', {
       url: '/apply',
       templateUrl: 'app/views/apply.view.html',
