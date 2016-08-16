@@ -184,7 +184,7 @@ exports.farmOwnerLogin = function farmOwnerLogin(req, res) {
   });
 };
 
-exports.beginPasswordReset = function beginPasswordReset(req, res) {
+exports.forgotPassword = function forgotPassword(req, res) {
   if (!req.body.email) {
     return res.status(401).send({
       success: true,
@@ -209,7 +209,7 @@ exports.beginPasswordReset = function beginPasswordReset(req, res) {
             })
           }
           else {
-            mailer.beginPasswordResetMail(email);
+            mailer.forgotPasswordMail(email);
             return res.status(200).send({
               success: true,
               message: resMessage
@@ -225,7 +225,7 @@ exports.beginPasswordReset = function beginPasswordReset(req, res) {
         });
       }
       else {
-        mailer.beginPasswordResetMail(email);
+        mailer.forgotPasswordMail(email);
         return res.status(200).send({
           success: true,
           message: resMessage
@@ -242,7 +242,7 @@ exports.beginPasswordReset = function beginPasswordReset(req, res) {
   }
 };
 
-exports.passwordReset = function passwordReset(req, res) {
+exports.resetPassword = function resetPassword(req, res) {
   if (!req.body.email || !req.body.password) {
     return res.status(401).send({
       success: true,

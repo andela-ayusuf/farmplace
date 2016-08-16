@@ -19,7 +19,7 @@ exports.welcomeMail = function welcomeMail(userEmail) {
 	});
 };
 
-exports.beginPasswordResetMail = function beginPasswordResetMail(userEmail) {
+exports.forgotPasswordMail = function beginPasswordResetMail(userEmail) {
 	transporter.sendMail({
 		from: config.emailUsername + '@gmail.com',
 		to: userEmail,
