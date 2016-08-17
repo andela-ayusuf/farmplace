@@ -4,6 +4,7 @@ var FarmOwner = require('../models/farmOwner.model');
 var config = require('../../config/config');
 var mailer = require('./mailer.controller');
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 mongoose.Promise = require('bluebird');
 
 // this method creates a new user
@@ -243,14 +244,15 @@ exports.forgotPassword = function forgotPassword(req, res) {
 };
 
 exports.resetPassword = function resetPassword(req, res) {
-  if (!req.body.email || !req.body.password) {
+  var email = req.body.email;
+  var password = req.body.password;
+  if (!email || !password) {
     return res.status(401).send({
       success: true,
       message: 'Please enter your email and password.'
     });
   }
   else {
-    var email = req.body.email;
     User.findOne({email: email})
     .then(function(user) {
       if (!user) {
@@ -263,36 +265,49 @@ exports.resetPassword = function resetPassword(req, res) {
             })
           }
           else {
-            FarmOwner.update({email: email}, {$set: {password: req.body.password}})
-            .then(function(farmOwner) {
-              return res.status(200).send({
-                success: true,
-                message: 'Password reset successful.'
-              });
-            })
-            .catch(function(err) {
-              return res.status(403).send({
-                success: false,
-                message: 'An error occured.',
-                error: err
+            bcrypt.hash(password, null, null, function(err, hash) {
+              if (err) {
+                return err;
+              }
+              password = hash;
+              FarmOwner.update({email: email}, {$set: {password: password}})
+              .then(function(farmOwner) {
+                return res.status(200).send({
+                  success: true,
+                  message: 'Password reset successful.'
+                });
+              })
+              .catch(function(err) {
+                return res.status(403).send({
+                  success: false,
+                  message: 'An error occured.',
+                  error: err
+                });
               });
             });
           }
         })
       }
       else {
-        User.update({email: email}, {$set: {password: req.body.password}})
-        .then(function(user) {
-          return res.status(200).send({
-            success: true,
-            message: 'Password reset successful.'
-          });
-        })
-        .catch(function(err) {
-          return res.status(403).send({
-            success: false,
-            message: 'An error occured.',
-            error: err
+        bcrypt.hash(password, null, null, function(err, hash) {
+          if (err) {
+            return err;
+          }
+          password = hash;
+       
+          User.update({email: email}, {$set: {password: password}})
+          .then(function(user) {
+            return res.status(200).send({
+              success: true,
+              message: 'Password reset successful.'
+            });
+          })
+          .catch(function(err) {
+            return res.status(403).send({
+              success: false,
+              message: 'An error occured.',
+              error: err
+            });
           });
         });
       }
