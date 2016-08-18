@@ -272,6 +272,7 @@ exports.resetPassword = function resetPassword(req, res) {
               password = hash;
               FarmOwner.update({email: email}, {$set: {password: password}})
               .then(function(farmOwner) {
+                mailer.resetPasswordMail(email);
                 return res.status(200).send({
                   success: true,
                   message: 'Password reset successful.'
@@ -297,6 +298,7 @@ exports.resetPassword = function resetPassword(req, res) {
        
           User.update({email: email}, {$set: {password: password}})
           .then(function(user) {
+            mailer.resetPasswordMail(email);
             return res.status(200).send({
               success: true,
               message: 'Password reset successful.'

@@ -29,3 +29,13 @@ exports.forgotPasswordMail = function beginPasswordResetMail(userEmail) {
 			If you did not make this request, please ignore this email.<p/>'
 	});
 };
+
+exports.resetPasswordMail = function resetPasswordMail(userEmail) {
+	transporter.sendMail({
+		from: config.emailUsername + '@gmail.com',
+		to: userEmail,
+		subject: 'Your Farm Place Password Has Been Changed',
+		html: '<p>This is confirm that your Farm Place password has been successfully changed.<p/> \n\
+			If you did not make this request, please contact us immediately.<p/>'
+	});
+};
