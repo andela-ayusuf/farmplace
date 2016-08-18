@@ -23,5 +23,9 @@ angular.module('farmplace')
     	return $http.post(baseUrl + '/api/forgotPassword', email);
     };
 
+    User.resetPassword = function(emailPass) {
+      return $http.put(baseUrl + '/api/forgotPassword', emailPass);
+    };
+
 		return User;
 	}]);

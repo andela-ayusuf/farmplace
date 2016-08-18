@@ -57,6 +57,23 @@ angular.module('farmplace')
       });
     };
 
+    $scope.resetPassword = function() {
+      if ($scope.user.password !== $scope.user.confirmPassword) {
+        $scope.error = 'Password Mismatch!';
+        $('#error').show();
+      }
+      else {
+        UserService.resetPassword($scope.user).then(function(res) {
+          $location.url('/');
+          $scope.success = res.data.message;
+          $('#success').show();
+        }, function(err) {
+          $scope.error = err.data.message;
+          $('#error').show();
+        });
+      }
+    };
+
 
     $(window).load(function() { // makes sure the whole site is loaded
       $('#status').fadeOut(); // will first fade out the loading animation
