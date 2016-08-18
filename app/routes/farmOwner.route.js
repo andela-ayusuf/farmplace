@@ -6,6 +6,9 @@ function farmOwnerRoutes(router) {
     .get(userCtrl.middleware, farmOwnerCtrl.getFarmOwner)
     .put(userCtrl.middleware, farmOwnerCtrl.editFarmOwner)
     .delete(userCtrl.middleware, farmOwnerCtrl.deleteFarmOwner);
+
+  router.route('/farmOwner/editFarmOwnerPassword/:id')
+  	.put(userCtrl.middleware, farmOwnerCtrl.editFarmOwnerPassword);
 }
 
 module.exports = farmOwnerRoutes;
