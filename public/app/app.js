@@ -63,6 +63,21 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       templateUrl: 'app/views/resetPassword.view.html',
       controller: 'UserCtrl'
     })
+    .state('userProfile', {
+      url: '/userProfile',
+      templateUrl: 'app/views/userProfile.view.html',
+      controller: 'UserCtrl'
+    })
+    .state('editProfile', {
+      url: '/editProfile',
+      templateUrl: 'app/views/editProfile.view.html',
+      controller: 'UserCtrl'
+    })
+    .state('settings', {
+      url: '/settings',
+      templateUrl: 'app/views/settings.view.html',
+      controller: 'UserCtrl'
+    })
     .state('apply', {
       url: '/apply',
       templateUrl: 'app/views/apply.view.html',

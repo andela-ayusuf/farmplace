@@ -1,0 +1,24 @@
+<!-- nav bar -->
+<ng-include src="'app/views/userNavbar.view.html'"></ng-include>
+
+<div class="login-main-div">
+  <div class="login-block">
+    <h4>Change Password</h4>
+    <div class="alert alert-danger collapse" id="error">
+      <strong>{{error}}</strong>
+    </div>
+    <form role="form">
+      <div class="form-group">
+        <input type="password" class="form-control" ng-model="user.password" placeholder="New Password">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" ng-model="user.confirmPassword" placeholder="Confirm Password">
+      </div>
+      <div class="row signupin-div">
+        <div class="col-xs-12 col-md-12">
+          <a href="#" id="signupin-but" ng-click="editUserPassword()" class="btn btn-default mbc btn-block">Update Password</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

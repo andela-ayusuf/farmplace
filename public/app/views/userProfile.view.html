@@ -1,0 +1,35 @@
+<!-- nav bar -->
+<ng-include src="'app/views/userNavbar.view.html'"></ng-include>
+
+<div class="mother-grid" ng-controller="UserCtrl" data-ng-init="getUser()">
+  <h2>{{user.username}}</h2>
+  <h4 class="text-capitalize">{{user.firstname}} {{user.lastname}}</h4>
+  <div class="up-block-left">
+    <div class="meta">
+      <ul class="meta-left">
+        <li class="user-email">
+          <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{user.email}}</p>
+        </li>
+        <li class="location">
+          <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{user.address}}</p>
+        </li>
+        <li class="date">
+          <p class="user-phone"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> {{user.phoneNo}}</p>
+        </li>
+      </ul>
+      <a href="/editProfile" class="btn meta-right mbc"><span style="color: white;" class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Profile</a>
+    </div>
+    <div class="content">
+      <h3>Bio</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.</p>
+    </div>
+  </div>
+
+  <div class="up-block-right">
+    <div class="list-group">
+      <a href="" class="list-group-item">Modal Farms</a>
+      <a href="" class="list-group-item">Blog Farms</a>
+      <a href="" class="list-group-item">Data Farms</a>
+    </div>
+  </div>
+</div>

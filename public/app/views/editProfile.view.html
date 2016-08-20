@@ -1,0 +1,94 @@
+<!-- nav bar -->
+<ng-include src="'app/views/userNavbar.view.html'"></ng-include>
+
+<div class="signup-main-div" data-ng-init="getUser()">
+  <div class="signup-block">
+    <h4>Edit Profile</h4>
+    <div class="alert alert-danger collapse" id="error">
+      <strong>{{error}}</strong>
+    </div>
+    <form role="form">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="user.firstname" placeholder="First Name">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="user.lastname" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="user.username" placeholder="Username">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="email" class="form-control" ng-model="user.email" placeholder="Email Address">
+          </div>
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <select class="form-control" ng-model="user.address">
+            <option>Abia</option>
+            <option>Adamawa</option>
+            <option>Akwa Ibom</option>
+            <option>Anambra</option>
+            <option>Bauchi</option>
+            <option>Bayelsa</option>
+            <option>Benue</option>
+            <option>Borno</option>
+            <option>Cross River</option>
+            <option>Delta</option>
+            <option>Ebonyi</option>
+            <option>Edo</option>
+            <option>Ekiti</option>
+            <option>Enugu</option>
+            <option>Federal Capital Territory</option>
+            <option>Gombe</option>
+            <option>Imo</option>
+            <option>Jigawa</option>
+            <option>Kaduna</option>
+            <option>Kano</option>
+            <option>Katsina</option>
+            <option>Kebbi</option>
+            <option>Kogi</option>
+            <option>Kwara</option>
+            <option>Lagos</option>
+            <option>Nassarawa</option>
+            <option>Niger</option>
+            <option>Ogun</option>
+            <option>Ondo</option>
+            <option>Osun</option>
+            <option>Oyo</option>
+            <option>Plateau</option>
+            <option>Rivers</option>
+            <option>Sokoto</option>
+            <option>Taraba</option>
+            <option>Yobe</option>
+            <option>Zamfara</option>
+          </select>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="tel" class="form-control" ng-model="user.phoneNo" placeholder="Phone Number">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" rows="8" placeholder="Say something about yourself. (Farm Owners will see this)"></textarea>
+      </div>
+      <hr>
+      <div class="row signupin-div">
+        <div class="col-xs-12 col-md-12">
+          <a href="#" ng-click="editUser()" class="btn btn-default mbc btn-block">Update Profile</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
