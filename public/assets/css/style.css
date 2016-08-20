@@ -539,4 +539,36 @@
   margin-top: 20px;
 }
 
+/*USER PROFILE PAGE*/
+/*this page uses some css from the job details page*/
+/*up === user profile*/
 
+.meta-left .user-email {
+  padding-right: 5px;
+}
+.content {
+  width: 87%;
+  margin-top: 50px;
+}
+.meta-left li {
+  list-style: none;
+  display: inline-block;
+}
+.up-block-left {
+  float: left;
+  width: 70%;
+}
+.up-block-left h3 {
+  font-size: 18px;
+}
+.up-block-right {
+  float: right;
+  width: 28%;
+  padding: 10px;
+  background:#FFFFFF;
+}
+.up-block-left p {
+  font-size: 15px;
+  line-height: 30px;
+  text-align: justify;
+}
