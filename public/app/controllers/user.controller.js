@@ -74,6 +74,38 @@ angular.module('farmplace')
       }
     };
 
+    $scope.editUser = function() {
+      var id = localStorage.getItem('id');
+      UserService.editUser(id, $scope.user).then(function(res) {
+        $location.url('/userProfile');
+      }, function(err) {
+        $scope.error = err.data.message;
+        $('#error').show();
+      });
+    };
+
+    $scope.editUserPassword = function() {
+      if ($scope.user === undefined) {
+        $scope.error = 'Please fill the required field(s)!';
+        $('#error').show();
+      }
+      else if ($scope.user.password !== $scope.user.confirmPassword) {
+        $scope.error = 'Password Mismatch!';
+        $('#error').show();
+      }
+      else {
+        var id = localStorage.getItem('id');
+        UserService.editUserPassword(id, $scope.user).then(function(res) {
+          console.log('res',res)
+          $location.url('/userProfile');
+        }, function(err) {
+          console.log('err',err)
+          $scope.error = err.data.message;
+          $('#error').show();
+        });
+      }
+    };
+
 
     $(window).load(function() { // makes sure the whole site is loaded
       $('#status').fadeOut(); // will first fade out the loading animation

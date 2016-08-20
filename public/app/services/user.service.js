@@ -27,5 +27,13 @@ angular.module('farmplace')
       return $http.put(baseUrl + '/api/forgotPassword', emailPass);
     };
 
+    User.editUser = function(id, user) {
+      return $http.put(baseUrl + '/api/user/' + id, user);
+    };
+
+    User.editUserPassword = function(id, password) {
+      return $http.put(baseUrl + '/api/user/editPassword/' + id, password)
+    };
+
 		return User;
 	}]);
