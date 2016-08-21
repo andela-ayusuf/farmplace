@@ -1,0 +1,35 @@
+<!-- nav bar -->
+<ng-include src="'app/views/foNavbar.view.html'"></ng-include>
+
+<div class="mother-grid" ng-controller="FarmOwnerCtrl" data-ng-init="getFarmOwner()">
+  <h2 class="text-capitalize">{{farmOwner.firstname}} {{farmOwner.lastname}}</h2>
+  <h4 class="text-capitalize">{{farmOwner.farmName}}</h4>
+  <div class="up-block-left">
+    <div class="meta">
+	    <div class="row meta-left">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+        	<p class="text-capitalize"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> {{farmOwner.agricType}} Farming</p>
+        	<p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{farmOwner.numOfEmployees}} Employees</p>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{farmOwner.email}}</p>
+          <p class="user-phone"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> {{farmOwner.phoneNo}}</p>
+        </div>
+      </div>
+      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{farmOwner.address}}, {{farmOwner.state}}</p>
+    </div>
+    <div class="content">
+      <h3>Farm Description</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur.</p>
+    </div>
+  </div>
+
+  <div class="up-block-right">
+    <div class="list-group">
+      <a href="" class="list-group-item">Modal Farms</a>
+      <a href="" class="list-group-item">Blog Farms</a>
+      <a href="" class="list-group-item">Data Farms</a>
+    </div>
+  </div>
+</div>
+
