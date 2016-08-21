@@ -44,5 +44,35 @@ angular.module('farmplace')
       })
     };
 
+    $scope.editFarmOwner = function() {
+      var id = localStorage.getItem('foId');
+      FarmOwnerService.editFarmOwner(id, $scope.farmOwner).then(function(res) {
+        $location.url('/foProfile');
+      }, function(err) {
+        $scope.error = err.data.message;
+        $('#error').show();
+      });
+    };
+
+    $scope.editFarmOwnerPassword = function() {
+      if ($scope.farmOwner === undefined) {
+        $scope.error = 'Please fill the required field(s)!';
+        $('#error').show();
+      }
+      else if ($scope.farmOwner.password !== $scope.farmOwner.confirmPassword) {
+        $scope.error = 'Password Mismatch!';
+        $('#error').show();
+      }
+      else {
+        var id = localStorage.getItem('foId');
+        FarmOwnerService.editFarmOwnerPassword(id, $scope.farmOwner).then(function(res) {
+          $location.url('/foProfile')
+        }, function(err) {
+          $scope.error = err.data.message;
+          $('#error').show();
+        });
+      }
+    };
+
   }]);
 

@@ -13,5 +13,13 @@ angular.module('farmplace')
     	return $http.get(baseUrl + '/api/farmOwner/' + id);
     };
 
+    FarmOwner.editFarmOwner = function(id, farmOwner) {
+    	return $http.put(baseUrl + '/api/farmOwner/' + id, farmOwner);
+    };
+
+    FarmOwner.editFarmOwnerPassword = function(id, password) {
+    	return $http.put(baseUrl + '/api/farmOwner/editFarmOwnerPassword/' + id, password)
+    };
+
 		return FarmOwner;
 	}]);
