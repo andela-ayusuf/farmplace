@@ -68,6 +68,21 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       templateUrl: 'app/views/userProfile.view.html',
       controller: 'UserCtrl'
     })
+    .state('foProfile', {
+      url: '/foProfile',
+      templateUrl: 'app/views/foProfile.view.html',
+      controller: 'FarmOwnerCtrl'
+    })
+    .state('foEditProfile', {
+      url: '/foEditProfile',
+      templateUrl: 'app/views/foEditProfile.view.html',
+      controller: 'FarmOwnerCtrl'
+    })
+    .state('foSettings', {
+      url: '/foSettings',
+      templateUrl: 'app/views/foSettings.view.html',
+      controller: 'FarmOwnerCtrl'
+    })
     .state('editProfile', {
       url: '/editProfile',
       templateUrl: 'app/views/editProfile.view.html',
