@@ -5,7 +5,7 @@ mongoose.Promise = require('bluebird');
 
 // this method returns a farm owners account details
 exports.getFarmOwner = function getFarmOwner(req, res) {
-  FarmOwner.findById(req.params.id)
+  FarmOwner.findOne({_id: req.params.id})
   .then(function(farmOwner) {
     if (!farmOwner) {
       return res.status(401).send({
@@ -49,7 +49,7 @@ exports.editFarmOwnerPassword = function editFarmOwnerPassword(req, res) {
   if (!req.body.password) {
     return res.status(401).send({
       success: false,
-      message: 'Please enter your password.'
+      message: 'Please enter your new password.'
     });
   }
   FarmOwner.findOne({_id: req.params.id})

@@ -77,7 +77,7 @@ exports.editUserPassword = function editUserPassword(req, res) {
   if (!req.body.password) {
     return res.status(401).send({
       success: false,
-      message: 'Please enter your password.'
+      message: 'Please enter your new password.'
     });
   }
   User.findOne({_id: req.params.id})
