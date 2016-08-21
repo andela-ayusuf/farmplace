@@ -575,3 +575,21 @@
   line-height: 30px;
   text-align: justify;
 }
+
+/*Farm Owner Edit Page*/
+
+.fo-edit-main-div {
+  margin-top: 75px;
+  width: 100%;
+}
+.fo-edit-block {
+  margin: 0 auto;
+  width: 43%;
+  text-align: center;
+}
+.fo-edit-block h4 {
+  padding-bottom: 10px;
+}
+.fo-edit-block hr {
+  margin-top: 5px;
+}
