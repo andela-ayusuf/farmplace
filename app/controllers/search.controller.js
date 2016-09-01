@@ -53,6 +53,12 @@ exports.search = function search(req, res) {
 	else {
 		Job.find({$or: [{title: title}, {location: location}]})
 		.then(function(jobs) {
+			if (jobs.length === 0) {
+				return res.status(200).send({
+					success: true,
+          message: 'Your search for ' + req.query.title + ' returned no results.'
+				});
+			}
 			return res.status(200).send({
 				success: true,
 				message: 'Here are your search results',
