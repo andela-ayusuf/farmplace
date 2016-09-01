@@ -1,6 +1,6 @@
 angular.module('farmplace')
 	.factory('JobService', ['$http', 'baseUrl', function($http, baseUrl) {
-		var Job= {};
+		var Job = {};
 
 		Job.postJob = function(job) {
       return $http.post(baseUrl + '/api/jobs', job);
