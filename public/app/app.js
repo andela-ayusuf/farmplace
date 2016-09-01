@@ -93,6 +93,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
       templateUrl: 'app/views/settings.view.html',
       controller: 'UserCtrl'
     })
+    .state('search', {
+      url: '/search',
+      templateUrl: 'app/views/search.view.html',
+      controller: 'UserCtrl'
+    })
     .state('apply', {
       url: '/apply',
       templateUrl: 'app/views/apply.view.html',
