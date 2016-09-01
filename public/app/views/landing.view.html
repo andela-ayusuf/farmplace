@@ -51,7 +51,7 @@
 </nav>
 
 <!-- slider area -->
-<div class="slider-area">
+<div class="slider-area" ng-controller="SearchCtrl">
   <div class="slider">
     <div id="bg-slider" class="owl-carousel owl-theme">
       <div class="item"><img src="../../assets/img/banner4.jpg" alt=""></div>
@@ -67,26 +67,59 @@
         <div class="search-form">
           <form action="" class=" form-inline">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Internship Title">
+              <input type="text" class="form-control" ng-model="terms.title" placeholder="Internship Title">
             </div>
             <div class="form-group">
-              <select name="" id="" class="form-control">
-                <option selected>Select Your Location</option>
-                <option>New york, CA</option>
-                <option>New york, CA</option>
-                <option>New york, CA</option>
-                <option>New york, CA</option>
+              <select class="form-control" ng-model="terms.location">
+                <option>Select Your Location</option>
+                  <option>Abia</option>
+                  <option>Adamawa</option>
+                  <option>Akwa Ibom</option>
+                  <option>Anambra</option>
+                  <option>Bauchi</option>
+                  <option>Bayelsa</option>
+                  <option>Benue</option>
+                  <option>Borno</option>
+                  <option>Cross River</option>
+                  <option>Delta</option>
+                  <option>Ebonyi</option>
+                  <option>Edo</option>
+                  <option>Ekiti</option>
+                  <option>Enugu</option>
+                  <option>Federal Capital Territory</option>
+                  <option>Gombe</option>
+                  <option>Imo</option>
+                  <option>Jigawa</option>
+                  <option>Kaduna</option>
+                  <option>Kano</option>
+                  <option>Katsina</option>
+                  <option>Kebbi</option>
+                  <option>Kogi</option>
+                  <option>Kwara</option>
+                  <option>Lagos</option>
+                  <option>Nassarawa</option>
+                  <option>Niger</option>
+                  <option>Ogun</option>
+                  <option>Ondo</option>
+                  <option>Osun</option>
+                  <option>Oyo</option>
+                  <option>Plateau</option>
+                  <option>Rivers</option>
+                  <option>Sokoto</option>
+                  <option>Taraba</option>
+                  <option>Yobe</option>
+                  <option>Zamfara</option>
               </select>
             </div>
-            <div class="form-group">
+<!--             <div class="form-group">
               <select name="" id="" class="form-control">
                 <option selected>Agric Type</option>
                 <option>Arable</option>
                 <option>Livestock</option>
                 <option>Mixed</option>
               </select>
-            </div>
-            <button type="button" class="btn btn-default mbc">Search</button>
+            </div> -->
+            <button type="button" ng-click="search()" class="btn btn-default mbc">Search</button>
           </form>
         </div>
       </div>
