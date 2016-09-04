@@ -1,8 +1,59 @@
 <!-- nav bar -->
 <ng-include src="'app/views/navbar.view.html'"></ng-include>
 
-<div class="foDb-main-div1" ng-controller="SearchCtrl" data-ng-init="searchResults()">
-  <div>
-    <h3>{{results.message}}</h3>
+<div class="search-main-div1" ng-controller="SearchCtrl">
+  <div ng-if="noResults">
+    <h3>Your search returned no results</h3>
+  </div>
+</div>
+
+
+<div class="search-main-div2" ng-controller="SearchCtrl">
+  <div class="jobs" ng-if="!noResults">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Here are Internship position matching your search</h4>
+      </div>
+      <div class="list-group">
+        <div class="list-group-item" ng-repeat="searchResults in searchResults | orderBy:'datePosted':true">
+          <div class="job-list-top clearfix">
+            <div class="job-list-left">
+              <p class="job-title text-capitalize"><a ng-click="getJob(job._id)" href="#">{{searchResults.title}}</a></p>
+            </div>
+            <div class="job-list-right">
+              <p class="job-date text-capitalize">{{searchResults.agricType}} Farming</p>
+            </div>
+          </div>
+          <p class="list-group-item-text text-capitalize">{{searchResults.farmName}}</p>
+          <div class="job-list-down clearfix">
+            <div class="job-list-left">
+              <p class="job-location text-capitalize"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{searchResults.location}}</p>
+            </div>
+            <div class="job-list-right">
+              <p class="job-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{searchResults.datePosted | calendar}}</p>
+            </div>
+          </div>
+        </div>
+      <!--   <div class="text-center">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
   </div>
 </div>
