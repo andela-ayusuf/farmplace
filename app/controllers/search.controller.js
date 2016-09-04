@@ -9,7 +9,7 @@ exports.search = function search(req, res) {
 		.then(function(jobs) {
 			if (jobs.length === 0) {
 				return res.status(200).send({
-					success: true,
+					success: false,
           message: 'Your search for ' + req.query.title + ' returned no results.'
 				});
 			}
@@ -32,7 +32,7 @@ exports.search = function search(req, res) {
 		.then(function(jobs) {
 			if (jobs.length === 0) {
 				return res.status(200).send({
-					success: true,
+					success: false,
           message: 'Your search for ' + req.query.location + ' returned no results.'
 				});
 			}
@@ -55,7 +55,7 @@ exports.search = function search(req, res) {
 		.then(function(jobs) {
 			if (jobs.length === 0) {
 				return res.status(200).send({
-					success: true,
+					success: false,
           message: 'Your search for ' + req.query.title + ' returned no results.'
 				});
 			}
