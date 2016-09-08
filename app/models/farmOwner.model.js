@@ -37,7 +37,7 @@ var farmOwnerSchema = new Schema({
 	agricType: {
 		type: String,
 		required: true,
-		enum: ['arable', 'livestock', 'mixed']
+		enum: ['Arable', 'Livestock', 'Mixed']
 	},
 	numOfEmployees: {
 		type: Number,

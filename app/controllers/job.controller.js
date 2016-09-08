@@ -158,7 +158,7 @@ exports.getFarmOwnerJobs = function getFarmOwnerJobs(req, res) {
   .then(function(jobs) {
     if (jobs.length === 0) {
       return res.status(200).send({
-        success: true,
+        success: false,
         message: 'You havent posted any jobs yet.'
       });
     }
