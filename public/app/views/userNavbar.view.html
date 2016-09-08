@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" ng-controller="UserCtrl" data-ng-init="getUser()">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="SearchCtrl">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -15,11 +15,11 @@
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control nav-search-form" size="30" placeholder="Search">
+            <input type="text" class="form-control nav-search-form" size="30" ng-model="term.title" placeholder="Job Title">
           </div>
-          <button type="submit" class="btn nav-button signup">Search</button>
+          <button ng-click="navsearch()" class="btn nav-button signup">Search</button>
         </form>
-        <li class="dropdown">
+        <li class="dropdown" ng-controller="UserCtrl" data-ng-init="getUser()">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}}<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/userProfile">View Profile</a></li>
