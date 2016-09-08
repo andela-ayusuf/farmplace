@@ -74,3 +74,28 @@ exports.search = function search(req, res) {
 		});
 	}
 };
+
+exports.navsearch = function navsearch(req, res) {
+	Job.find({title: req.query.title})
+	.then(function(job) {
+		if (job.length === 0) {
+			return res.status(200).send({
+				success: false,
+        message: 'Your search for ' + req.query.title + ' returned no results.'
+			});
+		}
+		return res.status(200).send({
+			success: true,
+			message: 'Here are your search results',
+			results: job
+		});
+	})
+	.catch(function(err) {
+		return res.status(403).send({
+			success: false,
+			message: 'An error occured!',
+			error: err
+		});
+	});
+};
+
