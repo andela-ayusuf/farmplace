@@ -9,5 +9,13 @@ angular.module('farmplace')
 		  });
 		};
 
+		Search.navsearch = function (term) {
+			return $http({
+				method: 'GET',
+				url: baseUrl + '/api/search',
+		    params: term
+		  });
+		};
+
 		return Search;
 	}]);

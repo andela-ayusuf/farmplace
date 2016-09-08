@@ -17,4 +17,20 @@ angular.module('farmplace')
 			});
 		};
 
+		$scope.navsearch = function() {
+			SearchService.navsearch($scope.term).then(function(res) {
+        var noResults;
+        if (res.data.success === false) {
+          $rootScope.noResults = true;
+        }
+        else if (res.data.success === true) {
+        	$rootScope.noResults = false;
+        }
+				$rootScope.searchResults = res.data.results;
+				$location.url('/search');
+			}, function(err) {
+				console.log(err)
+			});
+		};
+
 	}]);
