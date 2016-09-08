@@ -53,7 +53,7 @@ angular.module('farmplace')
       var foId = localStorage.getItem('foId');
       JobService.getFarmOwnerJobs(foId).then(function(res) {
         var noJobs;
-        if (res.data.length === 0) {
+        if (res.data.success === false) {
           $scope.noJobs = true;
         }
         $scope.jobs = res.data;
