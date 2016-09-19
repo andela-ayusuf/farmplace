@@ -4,7 +4,6 @@ var router = express.Router();
 var mongoose = require('mongoose');
 require('dotenv').load();
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
 var session = require('express-session');
 var methodOverride = require('method-override');
@@ -42,8 +41,6 @@ app.use(function(req, res, next) {
 });
 
 app.use(methodOverride('X-HTTP-Method-Override'));
-
-app.use(cookieParser());
 
 app.use('/api', router);
 
