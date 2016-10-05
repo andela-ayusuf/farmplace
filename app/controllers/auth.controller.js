@@ -21,7 +21,7 @@ exports.userSignup = function userSignup(req, res) {
   user.save()
   .then(function(user) {
     var token = jwt.sign(user, config.secret, {
-      expiresIn: 1440
+      expiresIn: 86400
     });
     mailer.welcomeMail(user.email);
     return res.status(200).send({
@@ -75,7 +75,7 @@ exports.userLogin = function userLogin(req, res) {
     } 
     else {
       var token = jwt.sign(user, config.secret, {
-        expiresIn: 1440
+        expiresIn: 86400
       });
       return res.status(200).send({
         success: true,
@@ -112,7 +112,7 @@ exports.farmOwnerSignup = function farmOwnerSignup(req, res) {
   farmOwner.save()
   .then(function(farmOwner) {
     var token = jwt.sign(farmOwner, config.secret, {
-      expiresIn: 1440
+      expiresIn: 86400
     });
     mailer.welcomeMail(farmOwner.email);
     return res.status(200).send({
@@ -166,7 +166,7 @@ exports.farmOwnerLogin = function farmOwnerLogin(req, res) {
     } 
     else {
       var token = jwt.sign(farmOwner, config.secret, {
-        expiresIn: 1440
+        expiresIn: 86400
       });
       return res.status(200).send({
         success: true,
