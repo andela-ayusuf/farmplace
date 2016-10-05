@@ -2,6 +2,7 @@ var Job = require('../models/job.model');
 var FarmOwner = require('../models/farmOwner.model');
 var User = require('../models/user.model');
 var Application = require('../models/application.model');
+var mailer = require('./mailer.controller');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
@@ -108,7 +109,7 @@ exports.getJob = function getJob(req, res) {
   });
 };
 
-// this method allows a user to apply for an internship
+// this method allows a user to apply for an internship and sends an email to the Job owner
 exports.apply = function apply(req, res) {
   var application = new Application();
   application.applicantId = req.body.id;
@@ -116,6 +117,18 @@ exports.apply = function apply(req, res) {
   application.details = req.body.details;
 
   application.save().then(function(application) {
+    Job.find({_id: application.jobId})
+    .populate('ownerId')
+    .then(function(farmOwner) {
+      mailer.applicationNotifier(farmOwner[0].ownerId.email)
+    })
+    .catch(function(err) {
+      return res.status(403).send({
+        success: false,
+        message: 'An error occured.',
+        error: err
+      });
+    });
     return res.status(200).send({
       success: true,
       message: 'Application Successful.'

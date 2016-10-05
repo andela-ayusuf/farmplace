@@ -39,3 +39,13 @@ exports.resetPasswordMail = function resetPasswordMail(userEmail) {
 			If you did not make this request, please contact us immediately.<p/>'
 	});
 };
+
+exports.applicationNotifier = function applicationNotifier(farmOwnerEmail) {
+	transporter.sendMail({
+		from: config.emailUsername + '@gmail.com',
+		to: farmOwnerEmail,
+		subject: 'Someone Applied For A Position You Posted',
+		html: '<p>This is to inform you that someone has applied for the position you posted.<p/>'
+	});
+};
+
