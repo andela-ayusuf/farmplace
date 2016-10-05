@@ -15,6 +15,9 @@ var applicationSchema = new Schema({
 	details: {
 		type: String
 	}
+},
+{
+	timestamps: true
 });
 
 module.exports = mongoose.model('Application', applicationSchema);

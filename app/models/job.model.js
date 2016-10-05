@@ -29,13 +29,12 @@ var jobSchema = new Schema({
 		required: true,
 		enum: ['Arable', 'Livestock', 'Mixed']
 	},
-	datePosted: {
-		type: Date,
-    default: new Date()
-	},
 	expiryDate: {
 		type: Date
 	}
+},
+{
+	timestamps: true
 });
 
 module.exports = mongoose.model('Job', jobSchema);
